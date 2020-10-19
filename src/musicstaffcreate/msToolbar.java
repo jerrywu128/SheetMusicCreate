@@ -12,7 +12,7 @@ public class msToolbar extends Panel {
         parent = p;
 
         this.setBackground(Color.LIGHT_GRAY);
-
+        this.setPreferredSize(new Dimension(0,75));
 
 
 

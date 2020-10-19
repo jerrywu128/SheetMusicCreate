@@ -8,8 +8,12 @@ import java.awt.event.*;
 public class MainWin extends Frame {
 
   MSCreate parent;
-  Dimension size = new Dimension(600,600);
+  Dimension size = new Dimension(1200,800);
+
   public msToolbar toolbar;
+  public msInstrumentMenu InstrumentMenu;
+  public msStaffPage staffPage;
+  public msMidiDevice MidiDevice;
 
 
   MainWin(MSCreate p){
@@ -18,9 +22,25 @@ public class MainWin extends Frame {
 
       this.setSize(size);
       toolbar = new msToolbar(this);
+      InstrumentMenu = new msInstrumentMenu(this);
+      staffPage = new msStaffPage(this);
+      MidiDevice = new msMidiDevice(this);
+
+
+
+
+
 
       this.setLayout(new BorderLayout());
+
       this.add(toolbar,BorderLayout.NORTH);
+      this.add(InstrumentMenu,BorderLayout.WEST);
+      this.add(staffPage,BorderLayout.CENTER);
+      this.add(MidiDevice,BorderLayout.SOUTH);
+
+
+
+
       this.setLocation(420,150);
 
       this.setVisible(true);
