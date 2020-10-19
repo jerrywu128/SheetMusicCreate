@@ -1,6 +1,9 @@
 package musicstaffcreate;
+
+
 import java.awt.*;
 import java.awt.event.*;
+
 
 public class msStaffPage extends Panel{
 
@@ -10,6 +13,8 @@ public class msStaffPage extends Panel{
         parent = p;
         this.setBackground(Color.ORANGE);
         this.setPreferredSize(new Dimension(0,0));
+
+
 
     }
 
