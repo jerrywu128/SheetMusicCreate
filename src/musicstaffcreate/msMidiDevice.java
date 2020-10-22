@@ -2,6 +2,7 @@ package musicstaffcreate;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class msMidiDevice extends Panel {
     MainWin parent;
@@ -9,7 +10,7 @@ public class msMidiDevice extends Panel {
     msMidiDevice(MainWin p){
 
         parent = p;
-        this.setBackground(Color.cyan);
+        this.setBackground(Color.lightGray);
         this.setPreferredSize(new Dimension(0,250));
 
     }
