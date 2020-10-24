@@ -1,32 +1,27 @@
 package musicstaffcreate;
 
-
 import javax.swing.*;
 import java.awt.*;
 
-public class newStaffButton extends msButton {
+public class wholenoteButton extends msButton{
 
-
-
-    newStaffButton(msToolbar p){
-
+    wholenoteButton(msToolbar p) {
         super(p);
-
-        //隱藏按鈕外誆
-
         //this.setBorderPainted(false);
         //this.setBorder(null);
-
-        imageURL   = cldr.getResource("icon/add-file.png");
+        this.setBounds(0,0,24,24);
+        imageURL   = cldr.getResource("icon/semibreve.png");
         icon = new ImageIcon(imageURL);
+
+
         this.setIcon(icon);
 
-        this.setToolTipText("新增頁面");
 
+        this.setToolTipText("全音符");
     }
+
     public void doSomething(){
 
 
     }
-
 }

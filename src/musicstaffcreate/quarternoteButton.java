@@ -2,31 +2,24 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class saveStaffButton extends msButton{
+public class quarternoteButton extends msButton{
 
-    saveStaffButton(msToolbar p){
-
+    quarternoteButton(msToolbar p) {
         super(p);
-
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/floppy.png");
+        imageURL   = cldr.getResource("icon/quarter-note.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
-        this.setToolTipText("儲存檔案");
 
-
-
-
-
+        this.setToolTipText("四分音符");
     }
 
     public void doSomething(){
 
 
     }
-
 
 }

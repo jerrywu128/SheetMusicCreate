@@ -6,8 +6,8 @@ public class openfileButton extends msButton{
 
     openfileButton(msToolbar p) {
         super(p);
-        this.setBorderPainted(false);
-        this.setBorder(null);
+        //this.setBorderPainted(false);
+        //this.setBorder(null);
 
 
         imageURL   = cldr.getResource("icon/folder.png");

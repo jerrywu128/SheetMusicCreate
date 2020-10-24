@@ -2,31 +2,27 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class saveStaffButton extends msButton{
+public class backButton extends msButton{
 
-    saveStaffButton(msToolbar p){
+    backButton(msToolbar p){
 
         super(p);
+
+        //隱藏按鈕外誆
 
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/floppy.png");
+        imageURL   = cldr.getResource("icon/back.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
-        this.setToolTipText("儲存檔案");
-
-
-
-
+        this.setToolTipText("返回上一步");
 
     }
-
     public void doSomething(){
 
 
     }
-
 
 }

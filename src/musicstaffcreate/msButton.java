@@ -11,7 +11,7 @@ public class msButton extends JButton {
 
     ClassLoader cldr ;
     java.net.URL imageURL;
-    public Icon icon ;
+    public ImageIcon icon ;
 
     msButton(msToolbar p){
 

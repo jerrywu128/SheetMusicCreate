@@ -2,31 +2,23 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class saveStaffButton extends msButton{
+public class sixteenthnoteButton extends msButton{
 
-    saveStaffButton(msToolbar p){
-
+    sixteenthnoteButton(msToolbar p) {
         super(p);
-
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/floppy.png");
+        imageURL   = cldr.getResource("icon/sixteenth-note.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
-        this.setToolTipText("儲存檔案");
 
-
-
-
-
+        this.setToolTipText("十六分音符");
     }
 
     public void doSomething(){
 
 
     }
-
-
 }
