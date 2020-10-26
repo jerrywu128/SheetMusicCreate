@@ -9,7 +9,7 @@ public class endPlayButton extends  msButton{
         //this.setBorder(null);
 
 
-        imageURL   = cldr.getResource("icon/stop-button-black-rounded-square.png");
+        imageURL   = cldr.getResource("icon/stop.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 

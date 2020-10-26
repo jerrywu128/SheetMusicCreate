@@ -42,7 +42,7 @@ public class MainWin extends Frame {
 
 
 
-      this.setLocation(420,150);
+      this.setLocation(240,150);
 
       this.setVisible(true);
 

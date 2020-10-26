@@ -13,7 +13,7 @@ public class backButton extends msButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/back.png");
+        imageURL   = cldr.getResource("icon/reply-message.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
