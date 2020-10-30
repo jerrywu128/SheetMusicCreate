@@ -3,6 +3,7 @@ package musicstaffcreate;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.plaf.*;
 
 public class msButton extends JButton {
 
@@ -13,6 +14,7 @@ public class msButton extends JButton {
     java.net.URL imageURL;
     public ImageIcon icon ;
 
+
     msButton(msToolbar p){
 
         super();
@@ -20,6 +22,12 @@ public class msButton extends JButton {
         cldr = this.getClass().getClassLoader();
         imageURL   = cldr.getResource("icon/piano.png");//預設icon
         icon =new ImageIcon(imageURL);//set button icon
+
+
+        UIManager.put("ToolTip.background", Color.DARK_GRAY);
+        UIManager.put("ToolTip.foreground", Color.WHITE);
+        UIManager.put("ToolTip.font",
+                new FontUIResource("SansSerif", Font.BOLD, 14));
 
         this.setToolTipText("piano");//設定滑鼠移動到按鈕上顯示的標籤
 

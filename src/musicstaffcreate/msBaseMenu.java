@@ -36,6 +36,7 @@ public class msBaseMenu extends Panel{
         this.add(savefile);
         this.add(back);
         this.add(forward);
+
         this.add(play);
         this.add(endplay);
 
