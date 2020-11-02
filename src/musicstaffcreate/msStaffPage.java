@@ -22,15 +22,15 @@ public class msStaffPage extends Panel{
 
         g.setColor(Color.black);
 
-        g.drawLine(100,295,400,295);
-        g.drawLine(100,275,400,275);
-        g.drawLine(100,285,400,285);
-        g.drawLine(100,265,400,265);
-        g.drawLine(100,255,400,255);
+        g.drawLine(100,195,400,195);
+        g.drawLine(100,175,400,175);
+        g.drawLine(100,185,400,185);
+        g.drawLine(100,165,400,165);
+        g.drawLine(100,155,400,155);
         g.setFont(new Font("Arial",0,80));
-        g.drawString("\uD834\uDD1E",110,302);
+        g.drawString("\uD834\uDD1E",110,202);
         g.setFont(new Font("Arial",0,30));
-        g.drawString("軟體開發中",170,283);
+        g.drawString("軟體開發中",170,183);
 
 
     }
