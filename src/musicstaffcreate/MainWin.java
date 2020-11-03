@@ -9,7 +9,7 @@ import javax.swing.*;
 public class MainWin extends Frame {
 
   MSCreate parent;
-  Dimension size = new Dimension(1200,800);
+  Dimension size = new Dimension(1400,800);
 
   public msToolbar toolbar;
   public msInstrumentMenu InstrumentMenu;
