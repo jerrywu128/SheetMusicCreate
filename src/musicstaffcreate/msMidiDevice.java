@@ -20,7 +20,7 @@ public class msMidiDevice extends JLayeredPane {
 
             whitekey[i] = new pianokeys(this);
             whitekey[i].setBounds(225+i*68,25,70,220);
-            whitekey[i].setOpaque(false);
+            whitekey[i].setOpaque(true);
             this.add(whitekey[i],DEFAULT_LAYER);
 
             if(i<10) {
