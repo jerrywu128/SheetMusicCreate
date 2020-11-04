@@ -37,7 +37,7 @@ public class msStaffPage extends JTabbedPane{
         g.drawLine(100,185,400,185);
         g.drawLine(100,165,400,165);
         g.drawLine(100,155,400,155);
-        g.setFont(new Font("標楷體",0,80));
+        g.setFont(new Font("",0,80));
         g.drawString("\uD834\uDD1E",110,202);
         g.setFont(new Font("標楷體",0,30));
         g.drawString("軟體開發中",170,183);
