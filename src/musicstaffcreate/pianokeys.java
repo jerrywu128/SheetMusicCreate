@@ -1,5 +1,5 @@
 package musicstaffcreate;
-
+// Just a pianokey can setting white and black keys.
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import java.awt.*;

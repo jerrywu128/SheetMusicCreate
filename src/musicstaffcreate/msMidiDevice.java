@@ -1,5 +1,5 @@
 package musicstaffcreate;
-
+//This is device table you can play music this.
 import java.awt.*;
 import javax.swing.*;
 

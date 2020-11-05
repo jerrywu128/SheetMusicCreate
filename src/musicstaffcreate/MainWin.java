@@ -13,7 +13,8 @@ public class MainWin extends Frame {
 
   public msToolbar toolbar;
   public msInstrumentMenu InstrumentMenu;
-  public msStaffPage staffPage;
+
+  public msTabbedPane tabbedPane;
   public msMidiDevice MidiDevice;
 
 
@@ -24,7 +25,9 @@ public class MainWin extends Frame {
       this.setSize(size);
       toolbar = new msToolbar(this);
       InstrumentMenu = new msInstrumentMenu(this);
-      staffPage = new msStaffPage(this);
+
+      tabbedPane = new msTabbedPane(this);
+
       MidiDevice = new msMidiDevice(this);
 
 
@@ -36,7 +39,7 @@ public class MainWin extends Frame {
 
       this.add(toolbar,BorderLayout.NORTH);
       this.add(InstrumentMenu,BorderLayout.WEST);
-      this.add(staffPage,BorderLayout.CENTER);
+      this.add(tabbedPane,BorderLayout.CENTER);
       this.add(MidiDevice,BorderLayout.SOUTH);
 
 
