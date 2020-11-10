@@ -12,14 +12,15 @@ import javax.swing.plaf.basic.BasicButtonUI;
 public class msStaffPage extends Panel{
 
     msTabbedPane parent;
-
-
+    static int count=0;
+    int id;
 
     msStaffPage(msTabbedPane p){
         parent = p;
-
+        count++;
+        id=count;
         this.setBackground(Color.white);
-        this.setPreferredSize(new Dimension(0,0));
+        this.setPreferredSize(new Dimension(0,800));
 
 
         this.parent.setVisible(true);
@@ -42,7 +43,7 @@ public class msStaffPage extends Panel{
         g.setFont(new Font("標楷體",0,30));
         g.drawString("軟體開發中",170,183);
 
-
+        g.drawString("Page " + id, 600, 400);
     }
 
 

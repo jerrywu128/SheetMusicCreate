@@ -3,6 +3,7 @@ package musicstaffcreate;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.Vector;
 
 
 
@@ -16,6 +17,8 @@ public class MainWin extends Frame {
 
   public msTabbedPane tabbedPane;
   public msMidiDevice MidiDevice;
+
+
 
 
   MainWin(MSCreate p){
@@ -45,7 +48,7 @@ public class MainWin extends Frame {
 
 
 
-      this.setLocation(240,150);
+      this.setLocation(25,50);
 
       this.setVisible(true);
 

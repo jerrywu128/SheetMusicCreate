@@ -10,7 +10,7 @@ import javax.swing.event.ChangeListener;
 
 public class msTabbedPane extends JTabbedPane {
 
-    msStaffPage l1,l2;
+
     MainWin parent;
 
     @Override
@@ -33,14 +33,12 @@ public class msTabbedPane extends JTabbedPane {
     msTabbedPane(MainWin p){
         parent = p;
 
-        l1 = new msStaffPage(this);
-        l2= new msStaffPage(this);
+
 
         this.setBackground(Color.white);
         this.setPreferredSize(new Dimension(0,0));
 
-        this.addTab("Page1",new JScrollPane(l1));
-        this.addTab("Page2",new JScrollPane(l2));
+
         this.parent.setVisible(true);
 
 

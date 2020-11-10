@@ -25,8 +25,7 @@ public class newStaffButton extends msButton {
 
     }
     public void doSomething(){
-
-
+         this.parent.parent.tabbedPane.addTab("page",new JScrollPane(new msStaffPage(this.parent.parent.tabbedPane)));
     }
 
 }
