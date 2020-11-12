@@ -1,5 +1,5 @@
 package musicstaffcreate;
-//This is a TabbedPane you can setting the msStaffPage in tab.
+//This is a TabbedPane you can add the msStaffPage in tab.
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
@@ -12,11 +12,15 @@ public class msTabbedPane extends JTabbedPane {
 
 
     MainWin parent;
+    static int count=0;
+    int id ;
 
     @Override
     public void addTab(String title, final Component content) {
+        count++;
+        id = count;
         JPanel tab = new JPanel(new BorderLayout());
-        JLabel label = new JLabel(title);
+        JLabel label = new JLabel(title+id);
         label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 4));
         CloseTabButton closeTabButton = new CloseTabButton(this,content);
         closeTabButton.setBorder(BorderFactory.createEmptyBorder());
@@ -34,10 +38,8 @@ public class msTabbedPane extends JTabbedPane {
         parent = p;
 
 
-
         this.setBackground(Color.white);
         this.setPreferredSize(new Dimension(0,0));
-
 
         this.parent.setVisible(true);
 

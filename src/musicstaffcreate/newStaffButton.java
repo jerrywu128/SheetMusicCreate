@@ -2,6 +2,7 @@ package musicstaffcreate;
 
 
 import javax.swing.*;
+
 import java.awt.*;
 
 public class newStaffButton extends msButton {
@@ -19,13 +20,15 @@ public class newStaffButton extends msButton {
 
         imageURL   = cldr.getResource("icon/add-file.png");
         icon = new ImageIcon(imageURL);
-        this.setIcon(icon);
+        this.setIcon(icon);//setting icon
 
         this.setToolTipText("新增頁面");
 
     }
     public void doSomething(){
-         this.parent.parent.tabbedPane.addTab("page",new JScrollPane(new msStaffPage(this.parent.parent.tabbedPane)));
+         this.parent.parent.tabbedPane.addTab("page",new msStaffPage(this.parent.parent.tabbedPane));
+
+
     }
 
 }

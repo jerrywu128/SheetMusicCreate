@@ -2,7 +2,7 @@ package musicstaffcreate;
 //This is device table you can play music this.
 import java.awt.*;
 import javax.swing.*;
-
+//The JlayeredPane container can cover component.
 public class msMidiDevice extends JLayeredPane {
     MainWin parent;
     pianokeys whitekey[], blackkey[] ;
