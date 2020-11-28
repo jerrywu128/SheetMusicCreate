@@ -7,7 +7,7 @@ import java.util.Vector;
 
 
 
-public class MainWin extends Frame {
+public class MainWin extends JFrame {
 
   MSCreate parent;
   Dimension size = new Dimension(1400,800);
