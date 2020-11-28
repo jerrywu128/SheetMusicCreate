@@ -50,6 +50,8 @@ public class MainWin extends Frame {
 
       this.setLocation(25,50);
 
+
+
       this.setVisible(true);
 
       this.addWindowListener(new WindowAdapter() {

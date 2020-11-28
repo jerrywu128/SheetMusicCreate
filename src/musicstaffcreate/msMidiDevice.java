@@ -17,7 +17,7 @@ public class msMidiDevice extends JLayeredPane {
         whitekey = new pianokeys[14];
         blackkey = new pianokeys[10];
         for(int i =0;i<14;i++) {
-
+//Piano key location
             whitekey[i] = new pianokeys(this);
             whitekey[i].setBounds(225+i*68,25,70,220);
             whitekey[i].setOpaque(true);
