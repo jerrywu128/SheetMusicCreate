@@ -15,6 +15,7 @@ public class pianokeys extends JButton {
         java.net.URL imageURL;
         public ImageIcon icon ;
 
+        Color keycolor;
 
         pianokeys(msMidiDevice p){
 
@@ -27,15 +28,30 @@ public class pianokeys extends JButton {
 
             this.addMouseListener(new MouseAdapter() {
 
-                public void mouseClicked(MouseEvent e){
-                    doSomething();
+                public void mousePressed(MouseEvent e){
+                    keycolor = getBackground();
+                    clicked();
                 }
 
             });
+            this.addMouseListener(new MouseAdapter() {
+
+                public void mouseReleased(MouseEvent e){
+                    release();
+                }
+
+            });
+        }
+
+        public void clicked(){
+            System.out.println("clicked!");
+            this.setBackground(Color.darkGray);
+        }
+        public void release(){
+            this.setBackground(keycolor);
 
         }
 
-        public void doSomething(){}
     }
 
 

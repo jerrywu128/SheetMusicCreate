@@ -17,10 +17,16 @@ public class msStaffPage extends JScrollPane{
 
     JPanel  panel;
 
+
     msStaffPage(msTabbedPane p){
         parent = p;
         count++;
         id=count;
+
+
+
+
+
         panel = new JPanel(){
 
             public void paint(Graphics g){
@@ -46,12 +52,26 @@ public class msStaffPage extends JScrollPane{
                 g.setFont(new Font("標楷體",0,30));
                 g.drawString("軟體開發中",500,83);
 
+
+
+
                 g.setFont(new Font("標楷體",0,17));
                 g.drawString("author",1000,133);
 
                 g.drawString("-" + id + "-", 550, 1390);
             }
+
+
         };
+        this.panel.setLayout(null);
+
+        JLabel lab = new JLabel("HERE");
+        lab.setLocation((int)(400 * Math.random()), (int)(400 * Math.random()));
+        lab.setSize(new Dimension(40,20));
+        lab.setVisible(true);
+        panel.add(lab);
+
+
         this.panel.setBackground(Color.white);
         this.panel.setPreferredSize(new Dimension(0,1400));
 
