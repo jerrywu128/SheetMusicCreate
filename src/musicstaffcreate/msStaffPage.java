@@ -4,6 +4,9 @@ package musicstaffcreate;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.basic.BasicButtonUI;
 
@@ -16,20 +19,21 @@ public class msStaffPage extends JScrollPane{
     int id;
 
     JPanel  panel;
+    msLabel staffTitle,authorTitle;
 
 
     msStaffPage(msTabbedPane p){
         parent = p;
         count++;
         id=count;
-
+        this.getVerticalScrollBar().setUnitIncrement(10);
 
 
 
 
         panel = new JPanel(){
 
-            public void paint(Graphics g){
+            public void paintComponent(Graphics g){
 
                 int l=0;
                 int x[]={370,600,830,1050};//分隔線位置
@@ -49,27 +53,34 @@ public class msStaffPage extends JScrollPane{
                     l+=125;
                 }
 
-                g.setFont(new Font("標楷體",0,30));
-                g.drawString("軟體開發中",500,83);
 
 
 
 
-                g.setFont(new Font("標楷體",0,17));
-                g.drawString("author",1000,133);
 
-                g.drawString("-" + id + "-", 550, 1390);
+                g.setFont(new Font("", 0, 18));
+                g.drawString("-" + id + "-", 565, 1390);
             }
 
 
         };
         this.panel.setLayout(null);
 
-        JLabel lab = new JLabel("HERE");
-        lab.setLocation((int)(400 * Math.random()), (int)(400 * Math.random()));
-        lab.setSize(new Dimension(40,20));
-        lab.setVisible(true);
-        panel.add(lab);
+        staffTitle = new msLabel("軟體開發中",SwingConstants.CENTER);
+        staffTitle.setLocation(450,33);
+        staffTitle.setFont(new Font("標楷體",0,30));
+        staffTitle.setSize(new Dimension(250,75));
+
+        panel.add(staffTitle);
+
+
+        authorTitle = new msLabel("author",SwingConstants.CENTER);
+        authorTitle.setLocation(989,90);
+        authorTitle.setFont(new Font("標楷體",0,17));
+        authorTitle.setSize(new Dimension(75,75));
+        panel.add(authorTitle);
+
+
 
 
         this.panel.setBackground(Color.white);
