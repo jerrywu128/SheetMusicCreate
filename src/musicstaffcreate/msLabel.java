@@ -9,17 +9,26 @@ import java.awt.Cursor;
 
 public class msLabel extends JLabel {
 
-    msLabel(String text, int horizontalAlignment){
+    msStaffPage parent;
+
+    msLabel(String text, int horizontalAlignment,msStaffPage p){
+        parent = p;
         this.setText(text);
         this.setHorizontalAlignment(horizontalAlignment);
-        this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+
         this.setVisible(true);
 
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseEntered(MouseEvent e){
                 Cursor c = new Cursor(Cursor.HAND_CURSOR);
+                msLabel.this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
                 msLabel.this.setCursor(c);
+            }
+            public void mouseExited(MouseEvent e){
+
+                msLabel.this.setBorder(null);
+
             }
             public void mouseClicked(MouseEvent e){
                 msLabel.this.setText("test");

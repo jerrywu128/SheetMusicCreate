@@ -24,6 +24,7 @@ public class msButton extends JButton {
         icon =new ImageIcon(imageURL);//set button icon
 
 
+
         UIManager.put("ToolTip.background", Color.DARK_GRAY);
         UIManager.put("ToolTip.foreground", Color.WHITE);
         UIManager.put("ToolTip.font",

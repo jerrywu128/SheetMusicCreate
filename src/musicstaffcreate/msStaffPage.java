@@ -18,7 +18,7 @@ public class msStaffPage extends JScrollPane{
     static int count=0;
     int id;
 
-    JPanel  panel;
+    JComponent  panel;
     msLabel staffTitle,authorTitle;
 
 
@@ -31,7 +31,7 @@ public class msStaffPage extends JScrollPane{
 
 
 
-        panel = new JPanel(){
+        panel = new JComponent(){
 
             public void paintComponent(Graphics g){
 
@@ -60,13 +60,14 @@ public class msStaffPage extends JScrollPane{
 
                 g.setFont(new Font("", 0, 18));
                 g.drawString("-" + id + "-", 565, 1390);
+
             }
 
 
         };
         this.panel.setLayout(null);
 
-        staffTitle = new msLabel("軟體開發中",SwingConstants.CENTER);
+        staffTitle = new msLabel("軟體開發中",SwingConstants.CENTER,this);
         staffTitle.setLocation(450,33);
         staffTitle.setFont(new Font("標楷體",0,30));
         staffTitle.setSize(new Dimension(250,75));
@@ -74,7 +75,7 @@ public class msStaffPage extends JScrollPane{
         panel.add(staffTitle);
 
 
-        authorTitle = new msLabel("author",SwingConstants.CENTER);
+        authorTitle = new msLabel("author",SwingConstants.CENTER,this);
         authorTitle.setLocation(989,90);
         authorTitle.setFont(new Font("標楷體",0,17));
         authorTitle.setSize(new Dimension(75,75));
