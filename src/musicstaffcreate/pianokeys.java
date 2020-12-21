@@ -5,7 +5,7 @@ import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import org.jfugue.player.Player;
 public class pianokeys extends JButton {
 
         msMidiDevice parent;
@@ -32,15 +32,17 @@ public class pianokeys extends JButton {
                     keycolor = getBackground();
                     clicked();
                 }
-
-            });
-            this.addMouseListener(new MouseAdapter() {
-
                 public void mouseReleased(MouseEvent e){
                     release();
                 }
+                public void mouseClicked(MouseEvent e){
+                    Player player = new Player();
+                    player.play("C D E F G A B");
+
+                }
 
             });
+
         }
 
         public void clicked(){

@@ -67,7 +67,7 @@ public class msStaffPage extends JScrollPane{
         };
         this.panel.setLayout(null);
 
-        staffTitle = new msLabel("軟體開發中",SwingConstants.CENTER,this);
+        staffTitle = new msLabel("Title",SwingConstants.CENTER,this);
         staffTitle.setLocation(450,33);
         staffTitle.setFont(new Font("標楷體",0,30));
         staffTitle.setSize(new Dimension(250,75));

@@ -3,6 +3,8 @@ package musicstaffcreate;
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
+
+
 //The JlayeredPane container can cover component.
 public class msMidiDevice extends JLayeredPane {
     MainWin parent;

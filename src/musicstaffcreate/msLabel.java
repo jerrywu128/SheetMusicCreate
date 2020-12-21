@@ -31,7 +31,11 @@ public class msLabel extends JLabel {
 
             }
             public void mouseClicked(MouseEvent e){
-                msLabel.this.setText("test");
+
+                String ren=JOptionPane
+                        .showInputDialog("輸入預更改之文字");
+                if(ren!=null)
+                   msLabel.this.setText(ren);
             }
 
         });
