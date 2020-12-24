@@ -3,7 +3,7 @@ import  java.awt.*;
 import javax.swing.*;
 
 
-public class msBaseMenu extends Panel{
+public class msBaseMenu extends JPanel{
     msToolbar parent;
 
     newStaffButton newStaff;
@@ -19,7 +19,8 @@ public class msBaseMenu extends Panel{
         parent = p;
 
         this.setBackground(Color.DARK_GRAY);
-        this.setPreferredSize(new Dimension(0,35));
+        this.setPreferredSize(new Dimension(0,45));
+        this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
         newStaff =new newStaffButton(this.parent);
         openfile =new openfileButton(this.parent);
         savefile =new saveStaffButton(this.parent);

@@ -67,18 +67,18 @@ public class msStaffPage extends JScrollPane{
         };
         this.panel.setLayout(null);
 
-        staffTitle = new msLabel("Title",SwingConstants.CENTER,this);
-        staffTitle.setLocation(450,33);
+        staffTitle = new msLabel("Title1234567890123",SwingConstants.CENTER,this);
+        staffTitle.setLocation(340,33);
         staffTitle.setFont(new Font("標楷體",0,30));
-        staffTitle.setSize(new Dimension(250,75));
+        staffTitle.setSize(new Dimension(500,75));
 
         panel.add(staffTitle);
 
 
-        authorTitle = new msLabel("author",SwingConstants.CENTER,this);
-        authorTitle.setLocation(989,90);
+        authorTitle = new msLabel("author1234567890123",SwingConstants.RIGHT,this);
+        authorTitle.setLocation(750,120);
         authorTitle.setFont(new Font("標楷體",0,17));
-        authorTitle.setSize(new Dimension(75,75));
+        authorTitle.setSize(new Dimension(300,30));
         panel.add(authorTitle);
 
 

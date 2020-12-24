@@ -5,11 +5,11 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class msToolbar extends Panel {
+public class msToolbar extends JPanel {
 
     MainWin parent;
-    public msBaseMenu baseMenu;
-    public msEditBar editBar;
+    msBaseMenu baseMenu;
+    msEditBar editBar;
 
 
     msToolbar(MainWin p){
@@ -18,13 +18,12 @@ public class msToolbar extends Panel {
 
         baseMenu = new msBaseMenu(this);
         editBar = new msEditBar(this);
-
         this.setLayout(new BorderLayout());
 
-       this.add(baseMenu,BorderLayout.NORTH);
-       this.add(editBar,BorderLayout.SOUTH);
+        this.add(baseMenu,BorderLayout.NORTH);
+        this.add(editBar,BorderLayout.SOUTH);
 
-        this.setPreferredSize(new Dimension(0,75));
+        this.setPreferredSize(new Dimension(0,95));
 
 
 

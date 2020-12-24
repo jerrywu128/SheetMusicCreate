@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 
-public class msEditBar extends Panel {
+public class msEditBar extends JPanel {
     msToolbar parent;
     quarternoteButton quarter;
     eighthnoteButton eighth;
@@ -25,8 +25,10 @@ public class msEditBar extends Panel {
 
         parent = p;
         this.setBackground(Color.LIGHT_GRAY);
-        this.setPreferredSize(new Dimension(0,40));
+        this.setPreferredSize(new Dimension(0,50));
+
         this.setLayout(new FlowLayout());
+
         quarter = new quarternoteButton(this.parent);
         eighth = new eighthnoteButton(this.parent);
         sixteenth = new sixteenthnoteButton(this.parent);

@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.plaf.*;
+import java.net.URL;
 
 public class msButton extends JButton {
 
@@ -11,7 +12,7 @@ public class msButton extends JButton {
 
 
     ClassLoader cldr ;
-    java.net.URL imageURL;
+    URL imageURL;
     public ImageIcon icon ;
 
 
@@ -20,7 +21,7 @@ public class msButton extends JButton {
         super();
         parent = p;
         cldr = this.getClass().getClassLoader();
-        imageURL   = cldr.getResource("icon/piano.png");//預設icon
+        imageURL   = this.cldr.getResource("icon/piano.png");//預設icon
         icon =new ImageIcon(imageURL);//set button icon
 
 

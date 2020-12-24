@@ -37,7 +37,7 @@ public class pianokeys extends JButton {
                 }
                 public void mouseClicked(MouseEvent e){
                     Player player = new Player();
-                    player.play("C D E F G A B");
+                    player.play("I[Alto_Sax] C");
 
                 }
 

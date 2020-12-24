@@ -18,7 +18,7 @@ public class newStaffButton extends msButton {
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/add-file.png");
+        imageURL   = cldr.getResource("icon/plus-sign.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);//setting icon
 
