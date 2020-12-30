@@ -23,11 +23,16 @@ public class msMidiDevice extends JLayeredPane {
         blackkey = new pianokeys[10];
         for(int i =0;i<14;i++) {
 //Piano key location
-            whitekey[i] = new pianokeys(this);
+            whitekey[i] = new pianokeys(this,i,'w');
+
+
+
             whitekey[i].setBounds(225+i*68,25,70,220);
             whitekey[i].setOpaque(true);
 
             //whitekey[i].setBackground(Color.black);
+
+
 
             this.add(whitekey[i],DEFAULT_LAYER);
 
@@ -35,7 +40,7 @@ public class msMidiDevice extends JLayeredPane {
 
             if(i<10) {
 
-                blackkey[i] = new pianokeys(this);
+                blackkey[i] = new pianokeys(this,i,'b');
 
                 if((i==2)||(i==5)||(i==7)) j += 70;
                 blackkey[i].setBounds(j+i*67  , 25, 40, 180);

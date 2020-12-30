@@ -19,7 +19,7 @@ public class msStaffPage extends JScrollPane{
     int id;
 
     JComponent  panel;
-    msLabel staffTitle,authorTitle;
+    msLabel staffTitle,authorTitle,instrumentTitle,pageCount;
 
 
     msStaffPage(msTabbedPane p){
@@ -59,7 +59,7 @@ public class msStaffPage extends JScrollPane{
 
 
                 g.setFont(new Font("", 0, 18));
-                g.drawString("-" + id + "-", 565, 1390);
+
 
             }
 
@@ -67,22 +67,30 @@ public class msStaffPage extends JScrollPane{
         };
         this.panel.setLayout(null);
 
-        staffTitle = new msLabel("Title1234567890123",SwingConstants.CENTER,this);
+        staffTitle = new msLabel("Title",SwingConstants.CENTER,this);
         staffTitle.setLocation(340,33);
         staffTitle.setFont(new Font("標楷體",0,30));
         staffTitle.setSize(new Dimension(500,75));
-
         panel.add(staffTitle);
 
 
-        authorTitle = new msLabel("author1234567890123",SwingConstants.RIGHT,this);
+        authorTitle = new msLabel("author",SwingConstants.RIGHT,this);
         authorTitle.setLocation(750,120);
         authorTitle.setFont(new Font("標楷體",0,17));
         authorTitle.setSize(new Dimension(300,30));
         panel.add(authorTitle);
 
+        instrumentTitle = new msLabel("Instrument",SwingConstants.LEFT,this);
+        instrumentTitle.setLocation(100,100);
+        instrumentTitle.setFont(new Font("標楷體",0,20));
+        instrumentTitle.setSize(new Dimension(150,30));
+        panel.add(instrumentTitle);
 
-
+        pageCount = new msLabel("-" + id + "-",SwingConstants.CENTER,this);
+        pageCount.setLocation(570,1350);
+        pageCount.setFont(new Font("標楷體",0,17));
+        pageCount.setSize(new Dimension(60,30));
+        panel.add(pageCount);
 
         this.panel.setBackground(Color.white);
         this.panel.setPreferredSize(new Dimension(0,1400));

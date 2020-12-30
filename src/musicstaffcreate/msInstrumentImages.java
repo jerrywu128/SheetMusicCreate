@@ -23,7 +23,7 @@ public class msInstrumentImages extends JPanel {
         imageURL   = cldr.getResource("icon/piano1.png");
         icon = new ImageIcon(imageURL);
         this.Images.setIcon(icon);
-
+        Images.setToolTipText("鋼琴");
 
         this.setBackground(Color.orange);
         this.setPreferredSize(new Dimension(0,80));
