@@ -20,12 +20,12 @@ public class msInstrumentImages extends JPanel {
         Images = new JLabel();
         this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
         cldr = this.getClass().getClassLoader();
-        imageURL   = cldr.getResource("icon/piano1.png");
+        imageURL   = cldr.getResource("icon/Saxophone.png");
         icon = new ImageIcon(imageURL);
         this.Images.setIcon(icon);
         Images.setToolTipText("鋼琴");
 
-        this.setBackground(Color.orange);
+        this.setBackground(Color.gray);
         this.setPreferredSize(new Dimension(0,80));
         this.add(Images);
 

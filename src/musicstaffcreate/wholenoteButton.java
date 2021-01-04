@@ -3,7 +3,7 @@ package musicstaffcreate;
 import javax.swing.*;
 import java.awt.*;
 
-public class wholenoteButton extends msButton{
+public class wholenoteButton extends msToggleButton{
 
     wholenoteButton(msToolbar p) {
         super(p);

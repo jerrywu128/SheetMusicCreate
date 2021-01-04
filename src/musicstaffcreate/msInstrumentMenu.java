@@ -23,6 +23,7 @@ public class msInstrumentMenu extends Panel{
         this.add(instrumentList,BorderLayout.SOUTH);
         this.setPreferredSize(new Dimension(200,0));
 
+
     }
 
 

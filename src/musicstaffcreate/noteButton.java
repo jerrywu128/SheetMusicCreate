@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class noteButton extends msButton{
+public class noteButton extends msToggleButton{
     noteButton(msToolbar p) {
         super(p);
         //this.setBorderPainted(false);

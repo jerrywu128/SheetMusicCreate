@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class eighthnoteButton extends msButton{
+public class eighthnoteButton extends msToggleButton{
     eighthnoteButton(msToolbar p) {
         super(p);
         //this.setBorderPainted(false);

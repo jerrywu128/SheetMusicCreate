@@ -16,7 +16,9 @@ public class msEditBar extends JPanel {
     restButton rest;
     noteButton note;
     halfnoteButton half;
-  
+
+    ButtonGroup type,length;//分為兩種群組按鈕音符休止符、長度
+
     JSeparator j;
 
 
@@ -29,13 +31,18 @@ public class msEditBar extends JPanel {
 
         this.setLayout(new FlowLayout());
 
+        type =new ButtonGroup();
+        length =new ButtonGroup();
+
+        half =new halfnoteButton(this.parent);
         quarter = new quarternoteButton(this.parent);
         eighth = new eighthnoteButton(this.parent);
         sixteenth = new sixteenthnoteButton(this.parent);
         whole = new wholenoteButton(this.parent);
         rest =new restButton(this.parent);
         note =new noteButton(this.parent);
-        half =new halfnoteButton(this.parent);
+
+
 
         j = new JSeparator(SwingConstants.VERTICAL);
         j.setBackground(new Color(0,0,0));
@@ -45,6 +52,8 @@ public class msEditBar extends JPanel {
         this.add(new JLabel("輸入模式"));
         this.add(note);
         this.add(rest);
+        type.add(rest);
+        type.add(note);
         this.add(j);
 
         this.add(new JLabel("音符大小"));
@@ -55,6 +64,11 @@ public class msEditBar extends JPanel {
         this.add(half);
         this.add(whole);
 
+        length.add(quarter);
+        length.add(eighth);
+        length.add(sixteenth);
+        length.add(half);
+        length.add(whole);
 
 
 

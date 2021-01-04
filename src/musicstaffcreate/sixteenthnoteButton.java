@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class sixteenthnoteButton extends msButton{
+public class sixteenthnoteButton extends msToggleButton{
 
     sixteenthnoteButton(msToolbar p) {
         super(p);

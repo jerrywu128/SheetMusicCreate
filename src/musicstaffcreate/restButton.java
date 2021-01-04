@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class restButton extends msButton{
+public class restButton extends msToggleButton{
     restButton(msToolbar p) {
         super(p);
         //this.setBorderPainted(false);

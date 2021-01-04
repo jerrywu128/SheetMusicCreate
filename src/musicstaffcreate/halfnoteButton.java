@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class halfnoteButton extends msButton{
+public class halfnoteButton extends msToggleButton{
     halfnoteButton(msToolbar p) {
         super(p);
         //this.setBorderPainted(false);

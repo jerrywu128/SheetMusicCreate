@@ -2,7 +2,7 @@ package musicstaffcreate;
 
 import javax.swing.*;
 
-public class quarternoteButton extends msButton{
+public class quarternoteButton extends msToggleButton{
 
     quarternoteButton(msToolbar p) {
         super(p);
