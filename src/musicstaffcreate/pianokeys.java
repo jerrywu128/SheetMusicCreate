@@ -41,19 +41,19 @@ public class pianokeys extends JButton {
                     Player player = new Player();
                     if(color=='w') {
                         if (alph < 7) {
-                            player.play("I[Violin] " + musical＿alphabet[alph]);
+                            player.play("I[Violin] " + musical＿alphabet[alph] + "i");
                         }
                         else {
-                            player.play("I[Violin] " + musical＿alphabet[alph - 7] + "6");
+                            player.play("I[Violin] " + musical＿alphabet[alph - 7] + "6"+ "i");
                         }
                     }
                     else if(color=='b'){
 
                         if (alph < 5) {
-                            player.play("I[Violin] " + musical＿alphabet[alph+7] +"#");
+                            player.play("I[Violin] " + musical＿alphabet[alph+7] +"#"+ "i");
                         }
                         else {
-                            player.play("I[Violin] " + musical＿alphabet[alph +7 -5] + "#6");
+                            player.play("I[Violin] " + musical＿alphabet[alph +7 -5] + "#6" + "i");
                         }
 
                     }

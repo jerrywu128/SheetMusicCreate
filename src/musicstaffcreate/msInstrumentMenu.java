@@ -14,13 +14,14 @@ public class msInstrumentMenu extends Panel{
     msInstrumentMenu(MainWin p){
 
         parent=p;
-        instrumentImages = new msInstrumentImages(this);
         instrumentList = new msInstrumentList(this);
+        instrumentImages = new msInstrumentImages(this);
+
         this.setBackground(Color.darkGray);
 
         this.setLayout(new BorderLayout());
-        this.add(instrumentImages,BorderLayout.NORTH);
         this.add(instrumentList,BorderLayout.SOUTH);
+        this.add(instrumentImages,BorderLayout.NORTH);
         this.setPreferredSize(new Dimension(200,0));
 
 

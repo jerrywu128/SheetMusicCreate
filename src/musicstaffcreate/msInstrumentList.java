@@ -6,11 +6,11 @@ import java.awt.*;
 public class msInstrumentList extends JPanel {
 
     msInstrumentMenu parent;
-    JRadioButton Instrument[];
+    msRadioButton Instrument[];
     ButtonGroup Instrument_list;
 
     String Instrument_name []={("鋼琴"),("單簧管"),("長笛"),("薩克斯風"),("法國號"),("小號"),("長號"),("上低音號"),("低音號")};
-
+    String Instrument_imageId [] ={("piano1"),("clarinet"),("flute"),("saxophone"),("french-horn"),("trumpet"),("trombone"),("bariton"),("tuba")};
     msInstrumentList(msInstrumentMenu p){
 
         parent = p;
@@ -22,13 +22,13 @@ public class msInstrumentList extends JPanel {
 
         Instrument_list =new ButtonGroup();
 
-        Instrument = new JRadioButton[9];
+        Instrument = new msRadioButton[9];
 
         for(int i=0;i<9;i++) {
             if(i==0)
-                Instrument[i] = new JRadioButton(Instrument_name[i],true);
+                Instrument[i] = new msRadioButton(this,Instrument_name[i],true,i);
             else
-                Instrument[i] = new JRadioButton(Instrument_name[i],false);
+                Instrument[i] = new msRadioButton(this,Instrument_name[i],false,i);
 
             Instrument[i].setForeground(Color.white);
             Instrument[i].setOpaque(false);
