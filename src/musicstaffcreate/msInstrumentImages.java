@@ -26,7 +26,7 @@ public class msInstrumentImages extends JPanel {
         Images.setToolTipText("鋼琴");
 
         this.setBackground(Color.gray);
-        this.setPreferredSize(new Dimension(0,80));
+        this.setPreferredSize(new Dimension(0,75));
         this.add(Images);
 
 

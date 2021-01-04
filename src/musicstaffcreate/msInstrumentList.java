@@ -31,7 +31,7 @@ public class msInstrumentList extends JPanel {
                 Instrument[i] = new JRadioButton(Instrument_name[i],false);
 
             Instrument[i].setForeground(Color.white);
-
+            Instrument[i].setOpaque(false);
 
 
 
