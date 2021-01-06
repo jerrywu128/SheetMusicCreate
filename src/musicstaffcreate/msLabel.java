@@ -6,10 +6,13 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import java.net.URL;
 
 public class msLabel extends JLabel {
 
     msStaffPage parent;
+
+
 
     msLabel(String text, int horizontalAlignment,msStaffPage p){
         parent = p;
@@ -17,6 +20,8 @@ public class msLabel extends JLabel {
         this.setHorizontalAlignment(horizontalAlignment);
 
         this.setVisible(true);
+
+
 
         this.addMouseListener(new MouseAdapter() {
 
@@ -34,6 +39,7 @@ public class msLabel extends JLabel {
 
                 String ren=JOptionPane
                         .showInputDialog("輸入預更改之文字");
+
                 if(ren!=null)
                    msLabel.this.setText(ren);
             }

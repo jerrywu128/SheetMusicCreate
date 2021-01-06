@@ -1,39 +1,25 @@
 package musicstaffcreate;
 
 import javax.swing.*;
-import javax.swing.text.Document;
-import java.io.*;
 
-public class saveStaffButton extends msButton{
+public class normalButton extends msToggleButton{
 
-
-
-
-    saveStaffButton(msToolbar p){
-
+    normalButton(msToolbar p) {
         super(p);
-
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/floppy.png");
+        imageURL   = cldr.getResource("icon/cursor.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
-        this.setToolTipText("儲存檔案");
 
-
-
-
-
-
+        this.setToolTipText("鼠標");
     }
 
     public void doSomething(){
 
 
-
     }
-
 
 }

@@ -5,7 +5,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.ChangeListener;
-
+import javax.swing.JOptionPane.*;
 
 
 public class msTabbedPane extends JTabbedPane {
@@ -32,6 +32,7 @@ public class msTabbedPane extends JTabbedPane {
         tab.setBorder(BorderFactory.createEmptyBorder(2, 1, 1, 1));
         super.addTab(title, content);
         setTabComponentAt(getTabCount() - 1, tab);
+
     }
 
     msTabbedPane(MainWin p){
@@ -75,7 +76,10 @@ class CloseTabButton extends JButton{
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent e){
-                doSomething(c);
+                int result =
+                    JOptionPane.showConfirmDialog(null , "確定關閉頁面？" , "警告",JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE);
+                if(result==0)
+                    doSomething(c);
             }
 
         });

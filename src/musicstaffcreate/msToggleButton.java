@@ -31,6 +31,7 @@ public class msToggleButton extends JToggleButton {
                 new FontUIResource("SansSerif", Font.BOLD, 14));
 
         this.setToolTipText("piano");//設定滑鼠移動到按鈕上顯示的標籤
+        this.setFocusable(false);
 
         this.setIcon(icon);
 
