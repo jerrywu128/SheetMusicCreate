@@ -81,7 +81,7 @@ public class msMidiDevice extends JLayeredPane {
                                   @Override
                                   public void keyPressed(KeyEvent e) {
                                       super.keyPressed(e);
-                                      if (e.getKeyCode() == KeyEvent.VK_SHIFT){
+                                      if (e.getKeyCode() == KeyEvent.VK_TAB){
                                             if(!Uppercase＿lowercase)
                                                 Uppercase＿lowercase=true;
                                             else
