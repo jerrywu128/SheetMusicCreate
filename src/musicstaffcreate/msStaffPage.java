@@ -19,7 +19,7 @@ public class msStaffPage extends JScrollPane{
     int id;
 
     JComponent  panel;
-    msLabel staffTitle,authorTitle,instrumentTitle,pageCount;
+    msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
 
 
     msStaffPage(msTabbedPane p){
@@ -28,7 +28,7 @@ public class msStaffPage extends JScrollPane{
         id=count;
         this.getVerticalScrollBar().setUnitIncrement(10);
 
-
+        String m[]={"1","5","9","13","17","21","25","29","33","37"};
 
 
         panel = new JComponent(){
@@ -49,11 +49,10 @@ public class msStaffPage extends JScrollPane{
                     for(int k=0;k<4;k++) {
                         g.setFont(new Font("", Font.BOLD, 80));
                         g.drawLine(x[k], 195 + l, x[k], 155 + l);
-                     }//小節數
+                     }//小節
+
                     l+=125;
                 }
-
-
 
 
 
@@ -91,6 +90,19 @@ public class msStaffPage extends JScrollPane{
         pageCount.setFont(new Font("標楷體",0,17));
         pageCount.setSize(new Dimension(60,30));
         panel.add(pageCount);
+
+        measure = new msLabel[10];
+        int g=0;
+        for(int i=0;i<10;i++){
+
+            measure[i] = new msLabel(m[i],SwingConstants.CENTER,this);
+            measure[i].setLocation(95,135+ i*10 + g);
+            measure[i].setFont(new Font("標楷體",0,12));
+            measure[i].setSize(new Dimension(25,20));
+            panel.add(measure[i]);
+
+            g+=115;
+        }
 
         this.panel.setBackground(Color.white);
         this.panel.setPreferredSize(new Dimension(0,1400));
