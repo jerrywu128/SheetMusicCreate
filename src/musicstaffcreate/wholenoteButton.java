@@ -5,8 +5,11 @@ import java.awt.*;
 
 public class wholenoteButton extends msToggleButton{
 
-    wholenoteButton(msToolbar p) {
+    msEditBar parent;
+
+    wholenoteButton(msEditBar p) {
         super(p);
+        parent =p;
         //this.setBorderPainted(false);
         //this.setBorder(null);
         this.setBounds(0,0,24,24);
@@ -21,6 +24,14 @@ public class wholenoteButton extends msToggleButton{
     }
 
     public void doSomething(){
+        Toolkit tk = Toolkit.getDefaultToolkit();
+
+        imageURL   = cldr.getResource("icon/whole-note.png");
+        icon = new ImageIcon(imageURL);
+        ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
+        Cursor cu = tk.createCustomCursor(imageIcon.getImage(),new Point(16,16),"");
+
+        parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
 
 
     }

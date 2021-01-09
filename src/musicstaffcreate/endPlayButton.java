@@ -12,7 +12,7 @@ public class endPlayButton extends  msButton{
         imageURL   = cldr.getResource("icon/stop.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
-
+        this.setEnabled(false);
         this.setToolTipText("結束");
     }
 

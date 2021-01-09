@@ -16,7 +16,7 @@ public class backButton extends msButton{
         imageURL   = cldr.getResource("icon/reply-message.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
-
+        this.setEnabled(false);
         this.setToolTipText("返回上一步");
 
     }

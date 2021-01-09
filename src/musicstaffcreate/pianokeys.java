@@ -44,53 +44,35 @@ public class pianokeys extends JButton {
             }
 
             public void mouseClicked(MouseEvent e) {
-                dothom(alph,color);
+                playmusic(alph,color);
             }
         });
 
 
-            /*this.addKeyListener(new KeyAdapter() {
-                Player player = new Player();
-                                    @Override
-                                    public void keyPressed(KeyEvent e) {
-                                        super.keyPressed(e);
-
-                                         for(int i=0;i<7;i++) {
-                                             if (e.getKeyChar() == keyboard_key[i]) {
-                                                 player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[i] + parent.Octave + "i");
-                                             }
-                                             else if (e.getKeyChar() == keyboard_key[i+7]){
-                                                 player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[i] + (parent.Octave+1)+"i");
-                                             }
-                                         }
-                                    }
-
-                                }
-            );*/
-
-
 
     }
-    public void dothom(int alph,char color) {
+    public void playmusic(int alph,char color) {
+        String alphString="";
         Player player = new Player();
         if (color == 'w') {
             if (alph < 7) {
-                player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[alph] + parent.Octave+"i");
+                alphString=musical＿alphabet[alph] +""+ parent.Octave+"i";
             } else {
-                player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[alph - 7] + (parent.Octave + 1)+"i");
+                alphString=musical＿alphabet[alph - 7] +""+ (parent.Octave + 1)+"i";
             }
         } else if (color == 'b') {
-
             if (alph < 5) {
-                player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[alph + 7] + "#" + parent.Octave+"i");
+                alphString=musical＿alphabet[alph + 7] + "#" + parent.Octave+"i";
             } else {
-                player.play("I[" + parent.MIDI_Ins + "] " + musical＿alphabet[alph + 7 - 5] + "#" + (parent.Octave + 1)+"i");
+                alphString=musical＿alphabet[alph + 7 - 5] + "#" + (parent.Octave + 1)+"i";
             }
-
         }
+        player.play("I[" + parent.MIDI_Ins + "] " + alphString);
+        System.out.println(alphString);
+
     }
     public void clicked() {
-        System.out.println("clicked!");
+        //System.out.println("clicked!");
         this.setBackground(Color.darkGray);
     }
 

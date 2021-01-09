@@ -2,7 +2,6 @@ package musicstaffcreate;
 
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 
@@ -13,11 +12,11 @@ public class msEditBar extends JPanel {
     eighthnoteButton eighth;
     sixteenthnoteButton sixteenth;
     wholenoteButton whole;
-    restButton rest;
-    noteButton note;
+    restMode rest;
+    noteMode note;
     halfnoteButton half;
-    normalButton normal;
-
+    cursorMode cursor;
+    inputType inputtype;
     ButtonGroup type,length;//分為兩種群組按鈕音符休止符、長度
 
     JSeparator j;
@@ -32,17 +31,21 @@ public class msEditBar extends JPanel {
 
         this.setLayout(new FlowLayout());
 
+
+        inputtype= musicstaffcreate.inputType.Cursor;
+
         type =new ButtonGroup();
         length =new ButtonGroup();
+        cursor = new cursorMode(this);
+        rest =new restMode(this);
+        note =new noteMode(this);
+        half =new halfnoteButton(this);
+        quarter = new quarternoteButton(this);
+        eighth = new eighthnoteButton(this);
+        sixteenth = new sixteenthnoteButton(this);
+        whole = new wholenoteButton(this);
 
-        half =new halfnoteButton(this.parent);
-        quarter = new quarternoteButton(this.parent);
-        eighth = new eighthnoteButton(this.parent);
-        sixteenth = new sixteenthnoteButton(this.parent);
-        whole = new wholenoteButton(this.parent);
-        rest =new restButton(this.parent);
-        note =new noteButton(this.parent);
-        normal= new normalButton(this.parent);
+
 
 
         j = new JSeparator(SwingConstants.VERTICAL);
@@ -51,12 +54,12 @@ public class msEditBar extends JPanel {
 
 
         this.add(new JLabel("輸入模式"));
-        this.add(normal);
+        this.add(cursor);
         this.add(note);
         this.add(rest);
         type.add(rest);
         type.add(note);
-        type.add(normal);
+        type.add(cursor);
         this.add(j);
 
         this.add(new JLabel("音符大小"));
@@ -67,15 +70,29 @@ public class msEditBar extends JPanel {
         this.add(half);
         this.add(whole);
 
+
+
         length.add(quarter);
         length.add(eighth);
         length.add(sixteenth);
         length.add(half);
         length.add(whole);
 
+        this.setLengthEnable(false);
 
 
     }
-
+    public void setLengthEnable(boolean b){
+        this.half.setEnabled(b);
+        this.quarter.setEnabled(b);
+        this.eighth.setEnabled(b);
+        this.sixteenth.setEnabled(b);
+        this.whole.setEnabled(b);
+    }
+    public void setTypeEnable(boolean b){
+        this.note.setEnabled(b);
+        this.rest.setEnabled(b);
+        this.cursor.setEnabled(b);
+    }
 
 }

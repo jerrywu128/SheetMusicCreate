@@ -1,10 +1,15 @@
 package musicstaffcreate;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class eighthnoteButton extends msToggleButton{
-    eighthnoteButton(msToolbar p) {
+
+    msEditBar parent;
+    eighthnoteButton(msEditBar p) {
+
         super(p);
+        parent =  p;
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
@@ -17,6 +22,15 @@ public class eighthnoteButton extends msToggleButton{
     }
 
     public void doSomething(){
+        Toolkit tk = Toolkit.getDefaultToolkit();
+
+        imageURL   = cldr.getResource("icon/eighth-note-up.png");
+        icon = new ImageIcon(imageURL);
+        ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+
+        Cursor cu = tk.createCustomCursor(imageIcon.getImage(),new Point(16,16),"");
+
+        parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
 
 
     }

@@ -26,8 +26,14 @@ public class newStaffButton extends msButton {
 
     }
     public void doSomething(){
+
          this.parent.parent.tabbedPane.addTab("page",new msStaffPage(this.parent.parent.tabbedPane));
 
+        if(this.parent.parent.tabbedPane.getTabCount()==1) {
+
+            parent.parent.toolbar.editBar.setTypeEnable(true);
+            parent.parent.toolbar.editBar.setLengthEnable(false);
+        }
 
     }
 

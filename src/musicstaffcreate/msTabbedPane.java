@@ -4,8 +4,6 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.event.ChangeListener;
-import javax.swing.JOptionPane.*;
 
 
 public class msTabbedPane extends JTabbedPane {
@@ -44,7 +42,7 @@ public class msTabbedPane extends JTabbedPane {
 
         this.parent.setVisible(true);
 
-
+        this.addTab("page",new msStaffPage(this));
     }
 
 }
@@ -86,7 +84,15 @@ class CloseTabButton extends JButton{
 
     }
      public void doSomething(final Component c){
+         if(this.parent.getTabCount()==1) {
+
+             parent.parent.toolbar.editBar.setTypeEnable(false);
+             parent.parent.toolbar.editBar.setLengthEnable(false);
+         }
+
          this.parent.removeTabAt(this.parent.indexOfComponent(c));
+
+
      }
 
 }

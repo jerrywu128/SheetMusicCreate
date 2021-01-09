@@ -13,7 +13,7 @@ public class playButton extends msButton{
         imageURL   = cldr.getResource("icon/play.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
-
+        this.setEnabled(false);
         this.setToolTipText("播放");
     }
 

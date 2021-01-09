@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class msToggleButton extends JToggleButton {
 
-    msToolbar parent;
+    msEditBar parent;
 
 
     ClassLoader cldr ;
@@ -15,9 +15,9 @@ public class msToggleButton extends JToggleButton {
     public ImageIcon icon ;
 
 
-    msToggleButton(msToolbar p){
+    msToggleButton(msEditBar p){
 
-        super();
+
         parent = p;
         cldr = this.getClass().getClassLoader();
         imageURL   = this.cldr.getResource("icon/piano.png");//預設icon

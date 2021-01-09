@@ -11,8 +11,7 @@ public class msBaseMenu extends JPanel{
     saveStaffButton savefile;
     backButton back;
     forwardButton forward;
-    playButton play;
-    endPlayButton endplay;
+
 
     msBaseMenu(msToolbar p){
 
@@ -26,8 +25,7 @@ public class msBaseMenu extends JPanel{
         savefile =new saveStaffButton(this.parent);
         back= new backButton(this.parent);
         forward = new forwardButton(this.parent);
-        play =new playButton(this.parent);
-        endplay =new endPlayButton(this.parent);
+
 
 
 
@@ -38,8 +36,7 @@ public class msBaseMenu extends JPanel{
         this.add(back);
         this.add(forward);
 
-        this.add(play);
-        this.add(endplay);
+
 
     }
 

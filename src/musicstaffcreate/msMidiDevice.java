@@ -121,22 +121,22 @@ public class msMidiDevice extends JLayeredPane {
                                       for (int i = 0; i < 14; i++) {
                                           if ((e.getKeyChar() == keyboard_key[0][i]) && (Uppercase＿lowercase == false) && (i < 7)) {
                                               whitekey[i].setBackground(Color.WHITE);
-                                              whitekey[i].dothom(i, 'w');
+                                              whitekey[i].playmusic(i, 'w');
 
                                           } else if ((e.getKeyChar() == keyboard_key[0][i]) && (Uppercase＿lowercase == true) && (i >= 7)) {
                                               whitekey[i].setBackground(Color.WHITE);
-                                              whitekey[i].dothom(i, 'w');
+                                              whitekey[i].playmusic(i, 'w');
 
                                           }
                                       }
                                       for (int i = 0; i < 10; i++) {
                                           if ((e.getKeyChar() == keyboard_key[1][i]) && (Uppercase＿lowercase == false) && (i < 5)) {
                                               blackkey[i].setBackground(Color.BLACK);
-                                              blackkey[i].dothom(i, 'b');
+                                              blackkey[i].playmusic(i, 'b');
 
                                           } else if ((e.getKeyChar() == keyboard_key[1][i]) && (Uppercase＿lowercase == true) && (i >= 5)) {
                                               blackkey[i].setBackground(Color.BLACK);
-                                              blackkey[i].dothom(i, 'b');
+                                              blackkey[i].playmusic(i, 'b');
 
                                           }
                                       }

@@ -28,8 +28,7 @@ public class msButton extends JButton {
 
         UIManager.put("ToolTip.background", Color.DARK_GRAY);
         UIManager.put("ToolTip.foreground", Color.WHITE);
-        UIManager.put("ToolTip.font",
-                new FontUIResource("SansSerif", Font.BOLD, 14));
+        UIManager.put("ToolTip.font", new FontUIResource("SansSerif", Font.BOLD, 14));
         this.setFocusable(false);
         this.setToolTipText("piano");//設定滑鼠移動到按鈕上顯示的標籤
 

@@ -3,6 +3,7 @@ package musicstaffcreate;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
 import javax.swing.*;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
@@ -18,11 +19,18 @@ public class msStaffPage extends JScrollPane{
     static int count=0;
     int id;
 
+
+
+    ClassLoader cldr ;
+    URL imageURL;
+    public ImageIcon icon ;
+
     JComponent  panel;
     msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
 
 
     msStaffPage(msTabbedPane p){
+
         parent = p;
         count++;
         id=count;
@@ -63,8 +71,12 @@ public class msStaffPage extends JScrollPane{
             }
 
 
+
+
+
         };
         this.panel.setLayout(null);
+
 
         staffTitle = new msLabel("Title",SwingConstants.CENTER,this);
         staffTitle.setLocation(340,33);
@@ -112,6 +124,32 @@ public class msStaffPage extends JScrollPane{
         this.parent.setVisible(true);
 
         this.setViewportView(panel);
+
+        this.addMouseListener(new MouseAdapter() {
+
+            public void mouseClicked(MouseEvent e){
+                cldr = this.getClass().getClassLoader();
+                if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
+                    imageURL   = cldr.getResource("icon/quarter-note-up.png");
+                else if(parent.parent.toolbar.editBar.inputtype==inputType.rest)
+                    imageURL   = cldr.getResource("icon/quarter-note-rest.png");
+
+                if(parent.parent.toolbar.editBar.inputtype!=inputType.Cursor) {
+                    icon = new ImageIcon(imageURL);
+                    ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+
+                    JLabel test = new JLabel(imageIcon);
+                    test.setLocation(getMousePosition().x - 18, getMousePosition().y - 18+msStaffPage.this.getVerticalScrollBar().getValue());
+                    test.setVisible(true);
+
+
+                    test.setSize(30, 45);
+                    panel.add(test);
+                    panel.repaint();
+                }
+            }
+
+        });
 
 
     }
