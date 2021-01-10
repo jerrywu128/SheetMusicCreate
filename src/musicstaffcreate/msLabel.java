@@ -26,24 +26,33 @@ public class msLabel extends JLabel {
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseEntered(MouseEvent e){
-                Cursor c = new Cursor(Cursor.HAND_CURSOR);
-                msLabel.this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-                msLabel.this.setCursor(c);
+
+                if(parent.parent.parent.toolbar.editBar.inputtype==inputType.Cursor) {
+                    msLabel.this.setEnabled(true);
+
+                    Cursor c = new Cursor(Cursor.HAND_CURSOR);
+                    msLabel.this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+                    msLabel.this.setCursor(c);
+                }else
+                    msLabel.this.setEnabled(false);
+
+
             }
             public void mouseExited(MouseEvent e){
-
-                msLabel.this.setBorder(null);
+                if(parent.parent.parent.toolbar.editBar.inputtype==inputType.Cursor) {
+                    msLabel.this.setBorder(null);
+                }
 
             }
-            public void mouseClicked(MouseEvent e){
+            public void mouseClicked(MouseEvent e) {
+                if (parent.parent.parent.toolbar.editBar.inputtype == inputType.Cursor) {
+                    String ren = JOptionPane
+                            .showInputDialog("輸入預更改之文字");
 
-                String ren=JOptionPane
-                        .showInputDialog("輸入預更改之文字");
-
-                if(ren!=null)
-                   msLabel.this.setText(ren);
-            }
-
+                    if (ren != null)
+                        msLabel.this.setText(ren);
+                }
+                }
         });
 
     }

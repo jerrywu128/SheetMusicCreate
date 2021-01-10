@@ -29,6 +29,9 @@ public class cursorMode extends msToggleButton{
         if(parent.parent.parent.tabbedPane.getTabCount()>0) {
             parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
         }
+        parent.inputtype = inputType.Cursor;
+        parent.longtype=longType.non;
+
         parent.parent.editBar.setLengthEnable(false);
     }
 

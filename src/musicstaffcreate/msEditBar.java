@@ -17,6 +17,7 @@ public class msEditBar extends JPanel {
     halfnoteButton half;
     cursorMode cursor;
     inputType inputtype;
+    longType longtype;
     ButtonGroup type,length;//分為兩種群組按鈕音符休止符、長度
 
     JSeparator j;
@@ -33,6 +34,7 @@ public class msEditBar extends JPanel {
 
 
         inputtype= musicstaffcreate.inputType.Cursor;
+        longtype=longType.non;
 
         type =new ButtonGroup();
         length =new ButtonGroup();

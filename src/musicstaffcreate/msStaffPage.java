@@ -23,7 +23,7 @@ public class msStaffPage extends JScrollPane{
 
     ClassLoader cldr ;
     URL imageURL;
-    public ImageIcon icon ;
+    public ImageIcon icon ,imageIcon;
 
     JComponent  panel;
     msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
@@ -129,17 +129,67 @@ public class msStaffPage extends JScrollPane{
 
             public void mouseClicked(MouseEvent e){
                 cldr = this.getClass().getClassLoader();
-                if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
-                    imageURL   = cldr.getResource("icon/quarter-note-up.png");
-                else if(parent.parent.toolbar.editBar.inputtype==inputType.rest)
-                    imageURL   = cldr.getResource("icon/quarter-note-rest.png");
+                if((parent.parent.toolbar.editBar.inputtype==inputType.Note)&&(parent.parent.toolbar.editBar.longtype!=longType.non)) {
+                    if(parent.parent.toolbar.editBar.longtype==longType.quarter){
+                        imageURL = cldr.getResource("icon/quarter-note-up.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.eighth){
+                        imageURL = cldr.getResource("icon/eighth-note-up.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.sixteenth){
+                        imageURL = cldr.getResource("icon/sixteenth-note-up.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.half){
+                        imageURL = cldr.getResource("icon/half-note-up.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.whole){
+                        imageURL = cldr.getResource("icon/whole-note.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
+                    }
 
-                if(parent.parent.toolbar.editBar.inputtype!=inputType.Cursor) {
+                }
+                else if((parent.parent.toolbar.editBar.inputtype==inputType.rest)&&(parent.parent.toolbar.editBar.longtype!=longType.non)) {
+                    if(parent.parent.toolbar.editBar.longtype==longType.quarter) {
+                        imageURL = cldr.getResource("icon/quarter-note-rest.png");
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.eighth){
+                        imageURL = cldr.getResource("icon/eighth-note-up.png");
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.sixteenth){
+                        imageURL = cldr.getResource("icon/sixteenth-note-up.png");
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.half){
+                        imageURL = cldr.getResource("icon/half-note-up.png");
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.whole){
+                        imageURL = cldr.getResource("icon/whole-note.png");
+                    }
+
                     icon = new ImageIcon(imageURL);
-                    ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                    imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 30, Image.SCALE_DEFAULT));
+
+
+                }
+
+                if((parent.parent.toolbar.editBar.inputtype!=inputType.Cursor)&&(parent.parent.toolbar.editBar.longtype!=longType.non)) {
+
 
                     JLabel test = new JLabel(imageIcon);
-                    test.setLocation(getMousePosition().x - 18, getMousePosition().y - 18+msStaffPage.this.getVerticalScrollBar().getValue());
+                    if(parent.parent.toolbar.editBar.longtype==longType.whole){
+                        test.setLocation(getMousePosition().x +7, getMousePosition().y - 10 + msStaffPage.this.getVerticalScrollBar().getValue());
+                    }
+                    else {
+                        test.setLocation(getMousePosition().x - 18, getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
+                    }
                     test.setVisible(true);
 
 

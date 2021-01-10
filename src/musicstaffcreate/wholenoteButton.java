@@ -30,7 +30,7 @@ public class wholenoteButton extends msToggleButton{
         icon = new ImageIcon(imageURL);
         ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
         Cursor cu = tk.createCustomCursor(imageIcon.getImage(),new Point(16,16),"");
-
+        parent.longtype=longType.whole;
         parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
 
 
