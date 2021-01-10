@@ -1,9 +1,11 @@
 package musicstaffcreate;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class noteMode extends msToggleButton{
     msEditBar parent;
+
     noteMode(msEditBar p) {
         super(p);
         parent = p;
@@ -24,6 +26,8 @@ public class noteMode extends msToggleButton{
     public void doSomething(){
         parent.parent.editBar.setLengthEnable(true);
         parent.inputtype = inputType.Note;
+
+
 
     }
 }

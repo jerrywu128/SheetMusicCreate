@@ -1,9 +1,11 @@
 package musicstaffcreate;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class restMode extends msToggleButton{
     msEditBar parent;
+
     restMode(msEditBar p) {
         super(p);
         parent = p;
@@ -22,6 +24,7 @@ public class restMode extends msToggleButton{
 
         parent.parent.editBar.setLengthEnable(true);
         parent.inputtype = inputType.rest;
+
 
     }
 }

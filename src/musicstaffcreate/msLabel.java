@@ -23,6 +23,7 @@ public class msLabel extends JLabel {
 
 
 
+
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseEntered(MouseEvent e){
@@ -33,9 +34,10 @@ public class msLabel extends JLabel {
                     Cursor c = new Cursor(Cursor.HAND_CURSOR);
                     msLabel.this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
                     msLabel.this.setCursor(c);
-                }else
+                }else {
                     msLabel.this.setEnabled(false);
 
+                }
 
             }
             public void mouseExited(MouseEvent e){

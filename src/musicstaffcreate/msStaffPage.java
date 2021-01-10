@@ -18,7 +18,7 @@ public class msStaffPage extends JScrollPane{
     msTabbedPane parent;
     static int count=0;
     int id;
-
+    JLabel note;
 
 
     ClassLoader cldr ;
@@ -183,18 +183,18 @@ public class msStaffPage extends JScrollPane{
                 if((parent.parent.toolbar.editBar.inputtype!=inputType.Cursor)&&(parent.parent.toolbar.editBar.longtype!=longType.non)) {
 
 
-                    JLabel test = new JLabel(imageIcon);
+                    note = new JLabel(imageIcon);
                     if(parent.parent.toolbar.editBar.longtype==longType.whole){
-                        test.setLocation(getMousePosition().x +7, getMousePosition().y - 10 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        note.setLocation(getMousePosition().x +7, getMousePosition().y - 10 + msStaffPage.this.getVerticalScrollBar().getValue());
                     }
                     else {
-                        test.setLocation(getMousePosition().x - 18, getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        note.setLocation(getMousePosition().x - 18, getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
                     }
-                    test.setVisible(true);
+                    note.setVisible(true);
 
 
-                    test.setSize(30, 45);
-                    panel.add(test);
+                    note.setSize(30, 45);
+                    panel.add(note);
                     panel.repaint();
                 }
             }
