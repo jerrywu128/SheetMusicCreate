@@ -24,14 +24,31 @@ public class msTabbedPane extends JTabbedPane {
         closeTabButton.setBorder(BorderFactory.createEmptyBorder());
 
 
+
         tab.add(label, BorderLayout.WEST);
         tab.add(closeTabButton, BorderLayout.EAST);
         tab.setOpaque(false);
         tab.setBorder(BorderFactory.createEmptyBorder(2, 1, 1, 1));
         super.addTab(title, content);
         setTabComponentAt(getTabCount() - 1, tab);
+  /*      tab.addMouseListener(new MouseAdapter() {
 
+          public void mouseClicked(MouseEvent e) {
+
+
+
+                if(e.getClickCount()==2){
+                    String ren = JOptionPane
+                            .showInputDialog("輸入預更改之文字");
+
+                    if (ren != null)
+                        label.setText(ren);
+                }
+            }
+        });
+*/
     }
+
 
     msTabbedPane(MainWin p){
         parent = p;
@@ -43,6 +60,8 @@ public class msTabbedPane extends JTabbedPane {
         this.parent.setVisible(true);
 
         this.addTab("page",new msStaffPage(this));
+
+
     }
 
 }
@@ -88,6 +107,7 @@ class CloseTabButton extends JButton{
 
              parent.parent.toolbar.editBar.setTypeEnable(false);
              parent.parent.toolbar.editBar.setLengthEnable(false);
+
          }
 
          this.parent.removeTabAt(this.parent.indexOfComponent(c));

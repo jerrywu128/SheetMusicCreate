@@ -6,6 +6,7 @@ import java.awt.*;
 public class sixteenthnoteButton extends msToggleButton{
 
     msEditBar parent;
+    ImageIcon imageIcon;
     sixteenthnoteButton(msEditBar p) {
         super(p);
         parent=p;
@@ -22,12 +23,24 @@ public class sixteenthnoteButton extends msToggleButton{
 
     public void doSomething(){
         Toolkit tk = Toolkit.getDefaultToolkit();
-        imageURL   = cldr.getResource("icon/sixteenth-note-up.png");
-        icon = new ImageIcon(imageURL);
-        ImageIcon imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+
+
+        if(parent.inputtype==inputType.Note) {
+            imageURL = cldr.getResource("icon/sixteenth-note-up.png");
+            icon = new ImageIcon(imageURL);
+            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+        }
+        else if(parent.inputtype==inputType.rest) {
+            imageURL = cldr.getResource("icon/sixteenth-note-rest.png");
+            icon = new ImageIcon(imageURL);
+            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(32, 35, Image.SCALE_DEFAULT));
+        }
+
         Cursor cu = tk.createCustomCursor(imageIcon.getImage(),new Point(16,16),"");
         parent.longtype=longType.sixteenth;
-        parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
+        for(int i=0;i<parent.parent.parent.tabbedPane.getTabCount();i++) {
+            parent.parent.parent.tabbedPane.getComponentAt(i).setCursor(cu);
+        }
 
 
     }

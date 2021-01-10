@@ -23,6 +23,14 @@ public class restMode extends msToggleButton{
     public void doSomething(){
 
         parent.parent.editBar.setLengthEnable(true);
+        if(parent.inputtype != inputType.rest) {
+            parent.resetlongButtongroup();
+            parent.longtype=longType.non;
+            for(int i=0;i<parent.parent.parent.tabbedPane.getTabCount();i++) {
+                parent.parent.parent.tabbedPane.getComponentAt(i).setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+
+        }
         parent.inputtype = inputType.rest;
 
 

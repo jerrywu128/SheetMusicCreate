@@ -19,7 +19,7 @@ public class msStaffPage extends JScrollPane{
     static int count=0;
     int id;
     JLabel note;
-
+    Cursor cu;
 
     ClassLoader cldr ;
     URL imageURL;
@@ -38,6 +38,8 @@ public class msStaffPage extends JScrollPane{
 
         String m[]={"1","5","9","13","17","21","25","29","33","37"};
 
+
+        Toolkit tk = Toolkit.getDefaultToolkit();
 
         panel = new JComponent(){
 
@@ -133,7 +135,8 @@ public class msStaffPage extends JScrollPane{
                     if(parent.parent.toolbar.editBar.longtype==longType.quarter){
                         imageURL = cldr.getResource("icon/quarter-note-up.png");
                         icon = new ImageIcon(imageURL);
-                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 45, Image.SCALE_DEFAULT));
+
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.eighth){
                         imageURL = cldr.getResource("icon/eighth-note-up.png");
@@ -160,22 +163,31 @@ public class msStaffPage extends JScrollPane{
                 else if((parent.parent.toolbar.editBar.inputtype==inputType.rest)&&(parent.parent.toolbar.editBar.longtype!=longType.non)) {
                     if(parent.parent.toolbar.editBar.longtype==longType.quarter) {
                         imageURL = cldr.getResource("icon/quarter-note-rest.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 28, Image.SCALE_DEFAULT));
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.eighth){
-                        imageURL = cldr.getResource("icon/eighth-note-up.png");
+                        imageURL = cldr.getResource("icon/eighth-note-rest.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 35, Image.SCALE_DEFAULT));
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.sixteenth){
-                        imageURL = cldr.getResource("icon/sixteenth-note-up.png");
+                        imageURL = cldr.getResource("icon/sixteenth-note-rest.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(32, 35, Image.SCALE_DEFAULT));
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.half){
-                        imageURL = cldr.getResource("icon/half-note-up.png");
+                        imageURL = cldr.getResource("icon/half-note-rest.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.whole){
-                        imageURL = cldr.getResource("icon/whole-note.png");
+                        imageURL = cldr.getResource("icon/whole-note-rest.png");
+                        icon = new ImageIcon(imageURL);
+                        imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
                     }
 
-                    icon = new ImageIcon(imageURL);
-                    imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 30, Image.SCALE_DEFAULT));
+
 
 
                 }
@@ -184,8 +196,27 @@ public class msStaffPage extends JScrollPane{
 
 
                     note = new JLabel(imageIcon);
-                    if(parent.parent.toolbar.editBar.longtype==longType.whole){
+                    if((parent.parent.toolbar.editBar.longtype==longType.whole)||((parent.parent.toolbar.editBar.longtype==longType.half)&&(parent.parent.toolbar.editBar.inputtype!=inputType.Note))){
+
                         note.setLocation(getMousePosition().x +7, getMousePosition().y - 10 + msStaffPage.this.getVerticalScrollBar().getValue());
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.quarter){
+                        if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
+                            note.setLocation(getMousePosition().x-21 , getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        else
+                            note.setLocation(getMousePosition().x-21 , getMousePosition().y - 26 + msStaffPage.this.getVerticalScrollBar().getValue());
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.eighth){
+                        if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
+                            note.setLocation(getMousePosition().x-18 , getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        else
+                            note.setLocation(getMousePosition().x-18 , getMousePosition().y - 23 + msStaffPage.this.getVerticalScrollBar().getValue());
+                    }
+                    else if(parent.parent.toolbar.editBar.longtype==longType.sixteenth){
+                        if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
+                            note.setLocation(getMousePosition().x-18 , getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        else
+                            note.setLocation(getMousePosition().x-17 , getMousePosition().y - 23 + msStaffPage.this.getVerticalScrollBar().getValue());
                     }
                     else {
                         note.setLocation(getMousePosition().x - 18, getMousePosition().y - 18 + msStaffPage.this.getVerticalScrollBar().getValue());
@@ -199,11 +230,12 @@ public class msStaffPage extends JScrollPane{
                 }
             }
 
+
         });
 
 
-    }
 
+    }
 
 
 }

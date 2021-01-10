@@ -97,4 +97,22 @@ public class msEditBar extends JPanel {
         this.cursor.setEnabled(b);
     }
 
+    public void resetlongButtongroup(){
+        length.remove(quarter);
+        length.remove(eighth);
+        length.remove(sixteenth);
+        length.remove(half);
+        length.remove(whole);
+        quarter.setSelected(false);
+        eighth.setSelected(false);
+        sixteenth.setSelected(false);
+        half.setSelected(false);
+        whole.setSelected(false);
+        length.add(quarter);
+        length.add(eighth);
+        length.add(sixteenth);
+        length.add(half);
+        length.add(whole);
+    }
+
 }

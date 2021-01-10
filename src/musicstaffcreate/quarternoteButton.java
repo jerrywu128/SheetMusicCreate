@@ -39,20 +39,21 @@ public class quarternoteButton extends msToggleButton{
         if(parent.inputtype==inputType.Note) {
             imageURL = cldr.getResource("icon/quarter-note-up.png");
             icon = new ImageIcon(imageURL);
-            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(30, 45, Image.SCALE_DEFAULT));
+            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 45, Image.SCALE_DEFAULT));
         }
         else if(parent.inputtype==inputType.rest) {
             imageURL = cldr.getResource("icon/quarter-note-rest.png");
             icon = new ImageIcon(imageURL);
-            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 30, Image.SCALE_DEFAULT));
+            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(25, 28, Image.SCALE_DEFAULT));
         }
 
 
 
         Cursor cu = tk.createCustomCursor(imageIcon.getImage(),new Point(16,16),"");
 
-        parent.parent.parent.tabbedPane.getComponentAt(parent.parent.parent.tabbedPane.getSelectedIndex()).setCursor(cu);
-
+        for(int i=0;i<parent.parent.parent.tabbedPane.getTabCount();i++) {
+            parent.parent.parent.tabbedPane.getComponentAt(i).setCursor(cu);
+        }
         parent.longtype=longType.quarter;
 
 
