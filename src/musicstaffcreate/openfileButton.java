@@ -1,6 +1,7 @@
 package musicstaffcreate;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
@@ -23,11 +24,23 @@ public class openfileButton extends msButton{
         this.setIcon(icon);
         this.setToolTipText("開啟檔案");
 
+
+
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "JPG & GIF Images", "jpg", "gif");
+        fc.setFileFilter(filter);
+
+
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == parent.baseMenu.openfile) {
-                    int returnVal = fc.showOpenDialog(openfileButton.this);
+
+                    int returnVal = fc.showOpenDialog(parent);
+                    if(returnVal == JFileChooser.APPROVE_OPTION) {
+                        System.out.println("You chose to open this file: " +
+                                fc.getSelectedFile().getName());
+                    }
                 }
             }
         });
