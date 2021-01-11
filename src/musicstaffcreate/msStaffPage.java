@@ -31,7 +31,7 @@ public class msStaffPage extends JScrollPane{
     JComponent  panel;
     msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
     Vector<JLabel> notes=null;
-
+    backButton back;
     msStaffPage(msTabbedPane p){
 
 
@@ -39,7 +39,11 @@ public class msStaffPage extends JScrollPane{
         count++;
         id=count;
         notes = new Vector<JLabel>() ;
+        back= new backButton(this);
+
         this.getVerticalScrollBar().setUnitIncrement(10);
+
+
 
         String m[]={"1","5","9","13","17","21","25","29","33","37"};
 
@@ -47,6 +51,7 @@ public class msStaffPage extends JScrollPane{
         Toolkit tk = Toolkit.getDefaultToolkit();
 
         panel = new JComponent(){
+
 
             public void paintComponent(Graphics g){
 
@@ -135,7 +140,10 @@ public class msStaffPage extends JScrollPane{
         this.parent.setVisible(true);
 
         this.setViewportView(panel);
-
+        back.setLocation(20,20);
+        back.setVisible(true);
+        back.setSize(new Dimension(45,45));
+        panel.add(back);
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent e){
@@ -253,7 +261,6 @@ public class msStaffPage extends JScrollPane{
 
 
     }
-
 
 }
 

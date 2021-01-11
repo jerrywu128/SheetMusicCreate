@@ -9,7 +9,7 @@ public class msBaseMenu extends JPanel{
     newStaffButton newStaff;
     openfileButton openfile;
     saveStaffButton savefile;
-    backButton back;
+   // backButton back;
     forwardButton forward;
 
 
@@ -23,7 +23,7 @@ public class msBaseMenu extends JPanel{
         newStaff =new newStaffButton(this.parent);
         openfile =new openfileButton(this.parent);
         savefile =new saveStaffButton(this.parent);
-        back= new backButton(this.parent);
+       // back= new backButton(this.parent);
         forward = new forwardButton(this.parent);
 
 
@@ -33,7 +33,7 @@ public class msBaseMenu extends JPanel{
         this.add(newStaff);
         this.add(openfile);
         this.add(savefile);
-        this.add(back);
+        //this.add(back);
         this.add(forward);
 
 

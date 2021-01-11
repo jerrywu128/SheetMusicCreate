@@ -20,7 +20,7 @@ public class msInstrumentMenu extends JPanel{
         this.setBackground(Color.darkGray);
 
         this.setLayout(new BorderLayout());
-        this.add(instrumentList,BorderLayout.SOUTH);
+        this.add(instrumentList,BorderLayout.CENTER);
         this.add(instrumentImages,BorderLayout.NORTH);
         this.setPreferredSize(new Dimension(200,0));
 
