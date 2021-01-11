@@ -27,7 +27,7 @@ public class openfileButton extends msButton{
 
 
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "JPG & GIF Images", "jpg", "gif");
+                "JPG & PNG Images", "jpg", "png");
         fc.setFileFilter(filter);
 
 
