@@ -29,14 +29,10 @@ public class wholenoteButton extends msToggleButton{
 
 
         if(parent.inputtype==inputType.Note) {
-            imageURL = cldr.getResource("icon/whole-note-1.png");
+            imageURL = cldr.getResource("icon/whole-note.png");
             icon = new ImageIcon(imageURL);
-            Image test = icon.getImage();
-            BufferedImage bi = new BufferedImage(test.getWidth(null), test.getHeight(null), BufferedImage.TYPE_INT_ARGB);
-            Graphics g = bi.createGraphics();
-            g.drawImage(test, 0, 0, 400, 135, null, this);
-            imageIcon =new ImageIcon(bi);
-            //imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
+
+            imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
         }
         else if(parent.inputtype==inputType.rest) {
             imageURL = cldr.getResource("icon/whole-note-rest.png");

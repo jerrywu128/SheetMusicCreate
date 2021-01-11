@@ -161,7 +161,6 @@ public class msStaffPage extends JScrollPane{
                     else if(parent.parent.toolbar.editBar.longtype==longType.whole){
                         imageURL = cldr.getResource("icon/whole-note.png");
                         icon = new ImageIcon(imageURL);
-
                         imageIcon = new ImageIcon(icon.getImage().getScaledInstance(80, 60, Image.SCALE_DEFAULT));
                     }
 
@@ -204,7 +203,7 @@ public class msStaffPage extends JScrollPane{
                     note = new JLabel(imageIcon);
                     if((parent.parent.toolbar.editBar.longtype==longType.whole)||((parent.parent.toolbar.editBar.longtype==longType.half)&&(parent.parent.toolbar.editBar.inputtype!=inputType.Note))){
 
-                        note.setLocation(getMousePosition().x -15, getMousePosition().y - 40 + msStaffPage.this.getVerticalScrollBar().getValue());
+                        note.setLocation(getMousePosition().x +7, getMousePosition().y - 10 + msStaffPage.this.getVerticalScrollBar().getValue());
                     }
                     else if(parent.parent.toolbar.editBar.longtype==longType.quarter){
                         if(parent.parent.toolbar.editBar.inputtype==inputType.Note)
