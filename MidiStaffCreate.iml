@@ -25,5 +25,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="itext7-barcodes-7.1.15-SNAPSHOT-sources" level="project" />
   </component>
 </module>

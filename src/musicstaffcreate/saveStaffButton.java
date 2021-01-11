@@ -1,22 +1,39 @@
 package musicstaffcreate;
 
+import com.itextpdf.io.IOException;
+import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.text.Document;
+
 import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageFilter;
-import java.io.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.filechooser.*;
+
+
+
+
+
 
 public class saveStaffButton extends msButton{
 
 
 
-    JFileChooser fc ;;
+    JFileChooser fc ;
+
     saveStaffButton(msToolbar p){
 
         super(p);
@@ -31,6 +48,7 @@ public class saveStaffButton extends msButton{
         this.setToolTipText("儲存檔案");
 
         fc = new JFileChooser();
+
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "PDF DOCUMENT", "jpg");
         fc.setFileFilter(filter);
@@ -45,7 +63,10 @@ public class saveStaffButton extends msButton{
                         BufferedImage image = new BufferedImage(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),
                                 parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum(), BufferedImage.TYPE_INT_ARGB);
                         Graphics2D g = image.createGraphics();
-                        ((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).paint(g);
+                        g.setColor(Color.WHITE);
+                        g.fillRect(0,0,parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum());//填充整个屏幕
+                        g.setColor(Color.BLACK);
+                        (((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getViewport().getView()).paint(g);
                         g.dispose();
                         try {
                             ImageIO.write(image, "png",
@@ -55,11 +76,37 @@ public class saveStaffButton extends msButton{
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
+                        //Document doc = new Document(new PdfDocument(new PdfWriter("/path/to/output.pdf")));
+                  /*      try {
+
+
+
+
+                            BufferedImage image = new BufferedImage(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),
+                                    parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum(), BufferedImage.TYPE_INT_ARGB);
+                            Graphics2D g2 = image.createGraphics();
+                            ((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).paint(g2);
+                            g2.dispose();
+                            ((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).printAll(g2);
+                            g2.dispose();
+
+
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                        finally{
+
+                                doc.close();
+                        }
+
+
+
+                    }*/
 
 
                     }
+                  }
                 }
-            }
         });
 
 
@@ -67,7 +114,9 @@ public class saveStaffButton extends msButton{
 
 
 
+
     }
+
 
     public void doSomething(){
 
