@@ -44,7 +44,7 @@ public class saveStaffButton extends msButton{
         fc = new JFileChooser();
 
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "PDF DOCUMENT", "jpg");
+                "png document", "png");
         fc.setFileFilter(filter);
 
         this.addActionListener(new ActionListener() {
@@ -54,11 +54,12 @@ public class saveStaffButton extends msButton{
 
                     if (fc.showSaveDialog(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())) == JFileChooser.APPROVE_OPTION) {
                         File file = fc.getSelectedFile();
+
                         BufferedImage image = new BufferedImage(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),
-                                parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum(), BufferedImage.TYPE_INT_ARGB);
+                                parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum()-300, BufferedImage.TYPE_INT_ARGB);
                         Graphics2D g = image.createGraphics();
                         g.setColor(Color.WHITE);
-                        g.fillRect(0,0,parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum());//填充整个屏幕
+                        g.fillRect(0,0,parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum()-300);//填充整个屏幕
                         g.setColor(Color.BLACK);
                         (((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getViewport().getView()).paint(g);
                         g.dispose();
@@ -70,32 +71,7 @@ public class saveStaffButton extends msButton{
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
-                        //Document doc = new Document(new PdfDocument(new PdfWriter("/path/to/output.pdf")));
-                  /*      try {
 
-
-
-
-                            BufferedImage image = new BufferedImage(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),
-                                    parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight()+((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum(), BufferedImage.TYPE_INT_ARGB);
-                            Graphics2D g2 = image.createGraphics();
-                            ((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).paint(g2);
-                            g2.dispose();
-                            ((JScrollPane)parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).printAll(g2);
-                            g2.dispose();
-
-
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
-                        finally{
-
-                                doc.close();
-                        }
-
-
-
-                    }*/
 
 
                     }
