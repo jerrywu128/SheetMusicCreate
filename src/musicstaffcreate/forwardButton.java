@@ -13,7 +13,7 @@ public class forwardButton extends msButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        this.setEnabled(false);
+
         imageURL   = cldr.getResource("icon/arrow.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);

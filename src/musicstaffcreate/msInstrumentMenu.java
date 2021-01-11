@@ -5,7 +5,7 @@ import javax.sound.midi.spi.*;
 import javax.swing.*;
 
 
-public class msInstrumentMenu extends Panel{
+public class msInstrumentMenu extends JPanel{
 
     MainWin parent;
     msInstrumentImages instrumentImages;

@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.net.URL;
+import java.util.Vector;
 import javax.swing.*;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
@@ -22,19 +23,22 @@ public class msStaffPage extends JScrollPane{
     JLabel note;
     Cursor cu;
 
+
     ClassLoader cldr ;
     URL imageURL;
     public ImageIcon icon ,imageIcon;
 
     JComponent  panel;
     msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
-
+    Vector<JLabel> notes=null;
 
     msStaffPage(msTabbedPane p){
+
 
         parent = p;
         count++;
         id=count;
+        notes = new Vector<JLabel>() ;
         this.getVerticalScrollBar().setUnitIncrement(10);
 
         String m[]={"1","5","9","13","17","21","25","29","33","37"};
@@ -230,13 +234,21 @@ public class msStaffPage extends JScrollPane{
 
 
                     note.setSize(30, 45);
-                    panel.add(note);
+                    notes.add(note);
+
+
+                    panel.add(notes.lastElement());
+
+
                     panel.repaint();
+
                 }
             }
 
 
         });
+
+
 
 
 

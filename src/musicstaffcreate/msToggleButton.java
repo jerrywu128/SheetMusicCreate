@@ -35,14 +35,7 @@ public class msToggleButton extends JToggleButton {
 
         this.setIcon(icon);
 
-       /* this.addMouseListener(new MouseAdapter() {
 
-            public void mouseClicked(MouseEvent e) {
-
-                doSomething();
-            }
-
-        });*/
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
