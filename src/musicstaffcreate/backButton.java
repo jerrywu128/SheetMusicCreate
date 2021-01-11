@@ -19,8 +19,8 @@ public class backButton extends JButton{
 
         //隱藏按鈕外誆
 
-        //this.setBorderPainted(false);
-        //this.setBorder(null);
+        this.setBorderPainted(false);
+        this.setBorder(null);
         cldr = this.getClass().getClassLoader();
         imageURL   = cldr.getResource("icon/reply-message.png");
         icon = new ImageIcon(imageURL);
@@ -38,9 +38,13 @@ public class backButton extends JButton{
     public void doSomething(){
         if((parent.parent.parent.toolbar.editBar.inputtype==inputType.Cursor)){
            if(parent.notes.size()>0) {
+             parent.forward.setVisible(true);
              parent.panel.remove(parent.notes.lastElement());
+             parent.trash_notes.add(parent.notes.lastElement());
              parent.notes.remove(parent.notes.lastElement());
              parent.panel.repaint();
+             if(parent.notes.size()==0)
+                 this.setVisible(false);
          }
         }
     }

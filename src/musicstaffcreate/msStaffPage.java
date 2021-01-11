@@ -31,7 +31,10 @@ public class msStaffPage extends JScrollPane{
     JComponent  panel;
     msLabel staffTitle,authorTitle,instrumentTitle,pageCount,measure[];
     Vector<JLabel> notes=null;
+    Vector<JLabel> trash_notes=null;
     backButton back;
+    forwardButton forward;
+
     msStaffPage(msTabbedPane p){
 
 
@@ -39,7 +42,9 @@ public class msStaffPage extends JScrollPane{
         count++;
         id=count;
         notes = new Vector<JLabel>() ;
+        trash_notes = new Vector<JLabel>();
         back= new backButton(this);
+        forward=new forwardButton(this);
 
         this.getVerticalScrollBar().setUnitIncrement(10);
 
@@ -141,9 +146,14 @@ public class msStaffPage extends JScrollPane{
 
         this.setViewportView(panel);
         back.setLocation(20,20);
-        back.setVisible(true);
+        back.setVisible(false);
         back.setSize(new Dimension(45,45));
         panel.add(back);
+
+        forward.setLocation(70,20);
+        forward.setVisible(false);
+        forward.setSize(new Dimension(45,45));
+        panel.add(forward);
         this.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent e){
@@ -240,7 +250,7 @@ public class msStaffPage extends JScrollPane{
                     }
                     note.setVisible(true);
 
-
+                    back.setVisible(true);
                     note.setSize(30, 45);
                     notes.add(note);
 
@@ -254,6 +264,13 @@ public class msStaffPage extends JScrollPane{
             }
 
 
+        });
+        this.addMouseWheelListener(new MouseWheelListener() {
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e) {
+                back.setLocation(20,20+msStaffPage.this.getVerticalScrollBar().getValue());
+                forward.setLocation(70,20+msStaffPage.this.getVerticalScrollBar().getValue());
+            }
         });
 
 
