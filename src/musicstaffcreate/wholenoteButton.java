@@ -14,7 +14,7 @@ public class wholenoteButton extends msToggleButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
         this.setBounds(0,0,24,24);
-        imageURL   = cldr.getResource("icon/whole.png");
+        imageURL   = cldr.getResource("icon/whole-note.png");
         icon = new ImageIcon(imageURL);
 
 
