@@ -263,7 +263,29 @@ public class msStaffPage extends JScrollPane{
                 }
             }
 
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                if(parent.parent.toolbar.editBar.inputtype==inputType.Cursor){
+                    staffTitle.setEnabled(true);
+                    authorTitle.setEnabled(true);
+                    instrumentTitle.setEnabled(true);
+                    pageCount.setEnabled(true);
+                    for(int i=0;i<10;i++){
+                        measure[i].setEnabled(true);
+                    }
 
+                }
+                else {
+                    staffTitle.setEnabled(false);
+                    authorTitle.setEnabled(false);
+                    instrumentTitle.setEnabled(false);
+                    pageCount.setEnabled(false);
+                    for(int i=0;i<10;i++){
+                        measure[i].setEnabled(false);
+                    }
+                }
+            }
         });
         this.addMouseWheelListener(new MouseWheelListener() {
             @Override
@@ -272,6 +294,7 @@ public class msStaffPage extends JScrollPane{
                 forward.setLocation(70,20+msStaffPage.this.getVerticalScrollBar().getValue());
             }
         });
+
 
 
 

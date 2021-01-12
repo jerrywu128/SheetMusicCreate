@@ -1,6 +1,7 @@
 package musicstaffcreate;
 
 import javax.swing.*;
+import javax.swing.plaf.metal.MetalButtonUI;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -29,15 +30,16 @@ public class msLabel extends JLabel {
             public void mouseEntered(MouseEvent e){
 
                 if(parent.parent.parent.toolbar.editBar.inputtype==inputType.Cursor) {
-                    msLabel.this.setEnabled(true);
+
+                    //msLabel.this.setEnabled(true);
 
                     Cursor c = new Cursor(Cursor.HAND_CURSOR);
                     msLabel.this.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
                     msLabel.this.setCursor(c);
-                }else {
-                    msLabel.this.setEnabled(false);
+                }//else {
+                  //  msLabel.this.setEnabled(false);
 
-                }
+               // }
 
             }
             public void mouseExited(MouseEvent e){
