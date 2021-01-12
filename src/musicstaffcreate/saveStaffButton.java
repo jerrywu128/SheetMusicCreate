@@ -44,7 +44,7 @@ public class saveStaffButton extends msButton{
         fc = new JFileChooser();
 
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "png document", "png");
+                "png jpg document", "png","jpg");
         fc.setFileFilter(filter);
 
         this.addActionListener(new ActionListener() {
@@ -55,19 +55,25 @@ public class saveStaffButton extends msButton{
                      if (fc.showSaveDialog(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())) == JFileChooser.APPROVE_OPTION) {
                          File file = fc.getSelectedFile();
 
+                         String fname = fc.getName(file);
+                         if(fname.indexOf(".png")==-1){
+                             file=new File(fc.getCurrentDirectory(),fname+".png");
+
+                         }
+
                          BufferedImage image = new BufferedImage(parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(),
                                  parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight() + ((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum() - 300, BufferedImage.TYPE_INT_ARGB);
                          Graphics2D g = image.createGraphics();
                          g.setColor(Color.WHITE);
-                         g.fillRect(0, 0, parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(), parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight() + ((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum() - 300);//填充整个屏幕
+                         g.fillRect(0, 0, parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getWidth(), parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex()).getHeight() + ((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getVerticalScrollBar().getMaximum() - 300);
                          g.setColor(Color.BLACK);
                          (((JScrollPane) parent.parent.tabbedPane.getComponentAt(parent.parent.tabbedPane.getSelectedIndex())).getViewport().getView()).paint(g);
                          g.dispose();
                          try {
                              ImageIO.write(image, "png",
-                                     fc.getSelectedFile());
+                                     file);
                              JOptionPane.showMessageDialog(null, "Image saved to "
-                                     + fc.getSelectedFile().getName());
+                                     + fc.getSelectedFile().getName()+".png");
                          } catch (Exception ex) {
                              ex.printStackTrace();
                          }
