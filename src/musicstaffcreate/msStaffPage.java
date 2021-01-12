@@ -285,6 +285,20 @@ public class msStaffPage extends JScrollPane{
                         measure[i].setEnabled(false);
                     }
                 }
+              if(notes.size()!=0)
+                back.setVisible(true);
+              if(trash_notes.size()!=0)
+                forward.setVisible(true);
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+
+                  back.setVisible(false);
+
+                  forward.setVisible(false);
             }
         });
         this.addMouseWheelListener(new MouseWheelListener() {

@@ -3,6 +3,8 @@ package musicstaffcreate;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 
 public class backButton extends JButton{
@@ -34,9 +36,19 @@ public class backButton extends JButton{
                 doSomething();
             }
         });
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                if(parent.notes.size()!=0)
+                    backButton.this.setVisible(true);
+            }
+        });
 
     }
     public void doSomething(){
+
+
         if((parent.parent.parent.toolbar.editBar.inputtype==inputType.Cursor)){
            if(parent.notes.size()>0) {
              parent.forward.setVisible(true);
