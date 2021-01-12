@@ -1,11 +1,14 @@
 package musicstaffcreate;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.*;
+import java.io.IOException;
 
 public class openfileButton extends msButton{
 
@@ -36,10 +39,27 @@ public class openfileButton extends msButton{
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == parent.baseMenu.openfile) {
 
+
                     int returnVal = fc.showOpenDialog(parent);
                     if(returnVal == JFileChooser.APPROVE_OPTION) {
                         System.out.println("You chose to open this file: " +
                                 fc.getSelectedFile().getName());
+                        try {
+                            File file = fc.getSelectedFile();
+                            BufferedImage image = ImageIO.read(file);
+
+                            JLabel nlabel= new JLabel(new ImageIcon(image));
+                            nlabel.setVisible(true);
+                            JScrollPane npanel=new JScrollPane(nlabel);
+                            npanel.getVerticalScrollBar().setUnitIncrement(10);
+
+                            npanel.setVisible(true);
+                            parent.parent.tabbedPane.addTab("page",npanel);
+
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+
                     }
                 }
             }
