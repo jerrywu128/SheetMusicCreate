@@ -15,7 +15,8 @@ public class backButton extends JButton{
 
     backButton(msStaffPage p){
 
-       parent =p;
+        this.setFocusable(false);
+        parent =p;
 
         //隱藏按鈕外誆
 

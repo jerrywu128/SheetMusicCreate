@@ -20,7 +20,7 @@ public class forwardButton extends JButton{
 
         this.setBorderPainted(false);
         this.setBorder(null);
-
+        this.setFocusable(false);
         cldr = this.getClass().getClassLoader();
         imageURL   = cldr.getResource("icon/arrow.png");
         icon = new ImageIcon(imageURL);
