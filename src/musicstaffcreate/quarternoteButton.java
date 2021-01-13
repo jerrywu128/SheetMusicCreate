@@ -20,7 +20,7 @@ public class quarternoteButton extends msToggleButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/quarter-note-up.png");
+        imageURL   = cldr.getResource("icon/quarter-note.png");
 
         icon = new ImageIcon(imageURL);
 

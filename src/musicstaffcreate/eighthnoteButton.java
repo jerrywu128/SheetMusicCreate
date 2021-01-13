@@ -15,7 +15,7 @@ public class eighthnoteButton extends msToggleButton{
         //this.setBorder(null);
 
 
-        imageURL   = cldr.getResource("icon/eighth-note-up.png");
+        imageURL   = cldr.getResource("icon/eighth-note.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 

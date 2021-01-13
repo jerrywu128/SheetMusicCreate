@@ -13,7 +13,7 @@ public class sixteenthnoteButton extends msToggleButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/sixteenth-note-up.png");
+        imageURL   = cldr.getResource("icon/sixteenth-note.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 

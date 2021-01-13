@@ -13,7 +13,7 @@ public class halfnoteButton extends msToggleButton{
         //this.setBorderPainted(false);
         //this.setBorder(null);
 
-        imageURL   = cldr.getResource("icon/half-note-up.png");
+        imageURL   = cldr.getResource("icon/half-note.png");
         icon = new ImageIcon(imageURL);
         this.setIcon(icon);
 
